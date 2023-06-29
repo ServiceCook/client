@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 
 function ServiceDetails(props){
     
@@ -35,6 +35,8 @@ function ServiceDetails(props){
     return (
         <div>
             <h1>{services.speciality}</h1>
+        
+            <Link to=""><button></button></Link>
         </div>
     )
     }
