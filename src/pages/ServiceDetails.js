@@ -34,7 +34,7 @@ function ServiceDetails(props){
     }else {
         
     return (
-        <div>
+        <div className="service-details">
             <h1>{services.speciality}</h1>
             <h2>{services.owner.name}</h2>
             <Link to="/services"><button>Back to the List</button></Link>

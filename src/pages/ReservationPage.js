@@ -28,7 +28,6 @@ function ReservationPage(props){
             .get(`${API_URL}/api/services/${serviceId}`, { headers : { Authorization: `Bearer ${storedToken}`}})
                 .then((e) => {
                     const infoService = e.data
-                    console.log(infoService);
                     setPricePerPerson(infoService.pricePerPerson)
                     setFullName(infoService.owner.name)
                 })
@@ -58,7 +57,6 @@ function ReservationPage(props){
             .post(`${API_URL}/api/services/${serviceId}/reserve`, newReservation, { headers : { Authorization: `Bearer ${storedToken}`}})
                 .then((response) => {
                     const reservationData = response.data;
-                    console.log(reservationData);
                     setService(reservationData._id);
                     setUser("");
                     setTotalPerson("");
