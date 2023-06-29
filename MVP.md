@@ -189,5 +189,11 @@ CLIENT :
             EditService
             Profil
 
+Add some rules :
 
+If we are the creator of the Service, you can't reserve your own Service
+
+If you are not inside the same town, you cannot make the reservation
+
+.
     

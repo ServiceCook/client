@@ -8,6 +8,8 @@ import IsPrivate from './components/IsPrivate';
 import IsAnon from "./components/IsAnon"
 import ServiceList from "./pages/ServiceList"
 import ServiceDetails from './pages/ServiceDetails';
+import ReservationPage from './pages/ReservationPage';
+import ConfirmationPage from "./pages/ConfirmationPage";
 
 function App() {
   return (
@@ -17,10 +19,11 @@ function App() {
       <Routes>
         <Route path="/" element={ <HomePage/>} />
         <Route path="/services" element={ <ServiceList/>} />
-        <Route path='/services/:serviceId' element={ < ServiceDetails/> } />
-
-        <Route path="/signup" element={<IsAnon> <SignupPage/> </IsAnon>}></Route>
-        <Route path="/login" element={ <IsAnon> <LoginPages/> </IsAnon> }></Route>
+        <Route path='/services/:serviceId' element={ <ServiceDetails/> } />
+        <Route path='/services/:serviceId/reserve' element={ <ReservationPage/>} />
+        <Route path="/signup" element={<IsAnon> <SignupPage/> </IsAnon>} />
+        <Route path="/login" element={ <IsAnon> <LoginPages/> </IsAnon> } />
+        <Route path="/confirmation" element={<ConfirmationPage />}/>
       </Routes>
     </div>
   );

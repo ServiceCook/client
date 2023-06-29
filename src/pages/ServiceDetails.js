@@ -10,7 +10,6 @@ function ServiceDetails(props){
 
     const { serviceId } = useParams();
 
-    console.log(serviceId, "tell me something");
 
     const getService = () => {
 
@@ -28,6 +27,8 @@ function ServiceDetails(props){
     useEffect(() => {
         getService();
     }, []);
+
+    console.log(services);
     if(services === undefined){
         return(<h1>Loading...</h1>)
     }else {
@@ -35,8 +36,9 @@ function ServiceDetails(props){
     return (
         <div>
             <h1>{services.speciality}</h1>
-        
-            <Link to=""><button></button></Link>
+            <h2>{services.owner.name}</h2>
+            <Link to="/services"><button>Back to the List</button></Link>
+            <Link to={`/services/${serviceId}/reserve`}><button>Reservation</button></Link>
         </div>
     )
     }
