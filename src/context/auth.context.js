@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-
+    const AuthContext = React.createContext();
  
 function AuthProviderWrapper(props) {
 
     const API_URL = "http://localhost:5005";
-    const AuthContext = React.createContext();
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const [isLogin, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [user, setUser] = useState(null);
  
@@ -78,7 +78,7 @@ function AuthProviderWrapper(props) {
   return (                                                   
     <AuthContext.Provider 
       value={{ 
-        isLoggedIn,
+        isLogin,
         isLoading,
         user,
         storeToken,
