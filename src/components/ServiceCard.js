@@ -10,7 +10,7 @@ function ServiceCard({ speciality, place, picture, _id, owner}) {
             {picture ? <img src={picture} alt="img"/> : <p>sorry, no picture</p>}
             <h2>{place}</h2>
             <Link to={`/services/${_id}`}>
-                <button>Intersting</button>
+                <button>Interesting</button>
             </Link>
             
         </div>

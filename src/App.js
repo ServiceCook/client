@@ -13,6 +13,7 @@ import ProfilePage from './pages/ProfilePage';
 import AddNewService from './components/AddNewService';
 import EditServicesPage from './pages/EditServicesPage';
 import ReservationListPage from './pages/ReservationListPage';
+import MyServicePage from './pages/MyServicePage'
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path='/create' element={<AddNewService />} />
         <Route path='/services/edit/:serviceId' element={ <EditServicesPage /> } />
         <Route path="/reservations" element={<ReservationListPage />} />
+        <Route path="/myService" element={ <MyServicePage />} />
       </Routes>
     </div>
   );

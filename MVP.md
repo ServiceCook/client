@@ -164,8 +164,6 @@ SERVER
             - isOwner
 
 
-
-
 CLIENT :
     SRC:
         Components:
@@ -195,5 +193,18 @@ If we are the creator of the Service, you can't reserve your own Service
 
 If you are not inside the same town, you cannot make the reservation
 
-.
-    
+
+
+Edit/Delete work want connected to -> Profile page and creator
+
+Create service -> return Services pages 
+
+Order information get inside List of Order -> In profil
+
+List of service create by the user -> Inside profile Page
+
+Add button inside profil for all profil page
+
+
+Add review page (Commentary with rating) 
+with Socket.io

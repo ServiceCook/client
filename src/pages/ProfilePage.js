@@ -22,7 +22,7 @@ function ProfilePage() {
         <button>Your Order</button>
       </Link>
 
-      <Link to="#">
+      <Link to="/myService">
         <button>Your Own Service</button>
       </Link>
      
