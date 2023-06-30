@@ -7,7 +7,7 @@ function AuthProviderWrapper(props) {
 
   const API_URL = "http://localhost:5005";
 
-  const [isLogin, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [user, setUser] = useState(null);
  
@@ -15,7 +15,7 @@ function AuthProviderWrapper(props) {
   const storeToken = (token) => {
     localStorage.setItem('authToken', token);
   }  
- 
+
   
   const authenticateUser = () => {         
     // Get the stored token from the localStorage
@@ -72,7 +72,7 @@ function AuthProviderWrapper(props) {
   return (                                                   
     <AuthContext.Provider 
       value={{ 
-        isLogin,
+        isLoggedIn,
         isLoading,
         user,
         storeToken,

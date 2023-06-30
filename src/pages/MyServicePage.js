@@ -2,6 +2,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import ServiceCard from "../components/ServiceCard";
 import { Link } from "react-router-dom";
+import IsPrivate from "../components/IsPrivate";
+
 
 function MyServicePage(props){
     const API_URL = "http://localhost:5005";
@@ -51,7 +53,7 @@ function MyServicePage(props){
                         <Link to={`/services/edit/${service._id}`}>
                             <button>Edit</button>
                         </Link>
-                        <button onClick={() => deleteService(service._id)}>Delete</button>
+                        <IsPrivate><button onClick={() => deleteService(service._id)}>Delete</button></IsPrivate>
                         </div>
                        )
                     })}

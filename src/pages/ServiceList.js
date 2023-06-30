@@ -2,10 +2,16 @@ import axios from "axios"
 import { useState, useEffect } from "react"
 import ServiceCard from "../components/ServiceCard";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../context/auth.context"
 
 function ServiceList(){
    const API_URL = "http://localhost:5005";
     const [services, setServices] = useState(undefined);
+
+    const{
+        isLoggedIn
+    } = useContext(AuthContext)
 
     const storeToken = localStorage.getItem('authToken');
     const getAllService = () => {
@@ -16,7 +22,8 @@ function ServiceList(){
                 })
                 .catch((e => console.log(e)))
         }
-
+    
+    
     const deleteService = (serviceId) => {
         axios
             .delete(`${API_URL}/api/services/${serviceId}`, { headers: { Authorization: `Bearer ${storeToken}` } })
@@ -40,11 +47,9 @@ function ServiceList(){
                 {services.map((service) => {
                     return(
                         <div>
+ 
                             <ServiceCard key={service._id} {...service}/>
-                            <Link to={`/services/edit/${service._id}`}>
-                                <button>Edit</button>
-                            </Link>
-                            <button onClick={() => deleteService(service._id)}>Delete</button>
+
                         </div>
                     )
                 })} 

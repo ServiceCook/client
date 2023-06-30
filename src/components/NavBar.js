@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function NavBar() {
     const{
-        isLogin,
+        isLoggedIn,
         logOutUser, 
     } = useContext(AuthContext)
 
@@ -18,7 +18,7 @@ function NavBar() {
                 <p>List of Service</p>
             </Link>
 
-            {isLogin && (
+            {isLoggedIn && (
                 <>
                     <Link to="/profile">
                         <p>Profile</p>
@@ -28,7 +28,7 @@ function NavBar() {
                 </>
             )}
 
-            {!isLogin && (
+            {!isLoggedIn && (
                 <>
                     <Link to="/signup"> <p>Sign Up</p> </Link>
                     <Link to="/login"> <p>LogIn</p> </Link>

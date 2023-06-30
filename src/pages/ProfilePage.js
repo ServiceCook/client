@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 
 function ProfilePage() {
   const{
-    isLogin,
+    isLoggedIn,
     user,
 } = useContext(AuthContext)
 
   return(
     <div className="profile">
       <div>
-        {isLogin && <h1>Welcome <span>{user.name}</span></h1>}
+        {isLoggedIn && <h1>Welcome <span>{user.name}</span></h1>}
       </div>
 
       <Link to="/create">
