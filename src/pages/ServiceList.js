@@ -7,9 +7,8 @@ function ServiceList(){
    const API_URL = "http://localhost:5005";
     const [services, setServices] = useState(undefined);
 
+    const storeToken = localStorage.getItem('authToken');
     const getAllService = () => {
-        const storeToken = localStorage.getItem('authToken');
-
         axios
             .get(`${API_URL}/api/services`, { headers: { Authorization: `Bearer ${storeToken}` } })
                 .then((result) => {
@@ -17,6 +16,16 @@ function ServiceList(){
                 })
                 .catch((e => console.log(e)))
         }
+
+    const deleteService = (serviceId) => {
+        axios
+            .delete(`${API_URL}/api/services/${serviceId}`, { headers: { Authorization: `Bearer ${storeToken}` } })
+            .then(() => {
+            getAllService(); // Refresh the service list after deleting
+            })
+            .catch((e) => console.log("error to delete", e));
+        };
+        
 
     useEffect(() => {
         getAllService();
@@ -35,6 +44,7 @@ function ServiceList(){
                             <Link to={`/services/edit/${service._id}`}>
                                 <button>Edit</button>
                             </Link>
+                            <button onClick={() => deleteService(service._id)}>Delete</button>
                         </div>
                     )
                 })} 

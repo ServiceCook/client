@@ -5,11 +5,12 @@ function ReservationListPage() {
   const API_URL = "http://localhost:5005";
 
   const [reservations, setReservations] = useState([]);
-
+  
   useEffect(() => {
     const fetchReservations = async () => {
       try {
-        const response = await axios.get(`${API_URL}/api/reservations`);
+        const storedToken = localStorage.getItem("authToken");
+        const response = await axios.get(`${API_URL}/api/reservations`, { headers : { Authorization: `Bearer ${storedToken}`}});
 
         setReservations(response.data);
       } catch (error) {
@@ -20,22 +21,20 @@ function ReservationListPage() {
     fetchReservations();
   }, []);
 
+  console.log(reservations);
+
   return (
     <div>
-      <h1>Reservation List</h1>
-      {reservations.length === 0 ? (
-        <p>No reservations found.</p>
-      ) : (
-        <ul>
-          {reservations.map((reservation) => (
-            <li key={reservation._id}>
-              <p>Service ID: {reservation.service}</p>
-              <p>Total Person: {reservation.totalPerson}</p>
-              <p>Date: {reservation.date}</p>
-            </li>
-          ))}
-        </ul>
-      )}
+      {reservations.map(element => {
+        return(
+          <div key={element._id}>
+              <h1>{element.fullName}</h1>
+              {/* <h3>Service ID: {element.service._id}</h3> */}
+              <p>Total Person: {element.totalPerson}</p>
+              <p>Date: {element.date}</p>
+          </div>
+        )
+      })}
     </div>
   );
 }

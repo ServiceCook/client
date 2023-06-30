@@ -34,9 +34,6 @@ function ReservationPage(props){
                 .catch((e) => console.log(e))
     }
 
-
-    
-
     const getReservation = (e) => {
 
         e.preventDefault();
