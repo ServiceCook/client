@@ -22,7 +22,6 @@ function AddNewService(props) {
       speciality,
       place,
       description,
-      //amountOfPeople,
       pricePerPerson,
     };
 
@@ -34,7 +33,6 @@ function AddNewService(props) {
         setSpeciality("");
         setPlace("");
         setDescription("");
-        //setAmountOfPeople("");
         setPricePerPerson("");
         
         props.updateServices();
@@ -54,6 +52,7 @@ function AddNewService(props) {
             type="text"
             name="speciality"
             value={speciality}
+            placeholder="ex: French Food"
             onChange={e => {setSpeciality(e.target.value)}}
           />
           <label>Image</label>
@@ -69,6 +68,7 @@ function AddNewService(props) {
             type="text"
             name="place"
             value={place}
+            placeholder="ex : Paris and Dublin"
             onChange={e => {setPlace(e.target.value)}}
           />
 
@@ -85,6 +85,8 @@ function AddNewService(props) {
             type="number"
             name="pricePerPerson"
             value={pricePerPerson}
+            min={1}
+            placeholder="ex : 80$"
             onChange={e => {setPricePerPerson(e.target.value)}}
           />
         <button type="submit">Create</button>
