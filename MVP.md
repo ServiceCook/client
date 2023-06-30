@@ -133,29 +133,29 @@ can see = Home - List - details with Reservation - Reservation form - Logout - (
 
 SERVER
     Model:
-        User.model.js
-        Service.model.js
-        Reservation.model.js
+        User.model.js ✅
+        Service.model.js ✅
+        Reservation.model.js ✅
     
     Route:
         auth.routes.js:
-            - Post/ Signup
-            - Post/ Login
-            - Get/ Verify
+            - Post/ Signup ✅
+            - Post/ Login ✅
+            - Get/ Verify ✅
         index.routes.js
             - get /
             
         service.routes.js
-            - Post/ Service
-            - Get/ Service
-            - Get/ Service/:id
-            - Put/ Service/:id
-            - Delete/ Service/:id
+            - Post/ Service ✅
+            - Get/ Service ✅
+            - Get/ Service/:id ✅
+            - Put/ Service/:id ✅
+            - Delete/ Service/:id ✅
         Reservation.routes.js
-            - Get/ Service/:id/reservation
-            - Post/ Service/:id/reservation
+            - Get/ Service/:id/reservation ✅
+            - Post/ Service/:id/reservation ✅
         Profil.routes.js:
-            - Get/ Profil/
+            - Get/ Profil/ ✅
     
     Middleware:
             - JWT.Middlewware
@@ -167,25 +167,30 @@ SERVER
 CLIENT :
     SRC:
         Components:
-            ServiceCard.js
-            ReservationCard.js
-            AddService
-            AddReservation  
-            Navbar
-            isPrivate
-            isOwner
+            ServiceCard.js ✅
+            ReservationCard.js ✅
+            AddService✅
+            AddReservation   ✅
+            Navbar ✅
+            isPrivate ✅
+            isOwner ✅
         Context:
-            auth.context.js
+            auth.context.js ✅
         Pages:
-            HomePage
-            LoginPage
-            SignupPage
-            ServiceList
-            ServiceDetails
-            Reservation
-            CreationService
-            EditService
+            HomePage ✅
+            LoginPage ✅
+            SignupPage ✅
+            ServiceList ✅
+            ServiceDetails ✅
+            Reservation ✅
+            CreationService ✅
+            EditService ✅
             Profil
+            Review
+            Edit Review
+            delete Review
+
+
 
 Add some rules :
 
@@ -195,16 +200,73 @@ If you are not inside the same town, you cannot make the reservation
 
 
 
-Edit/Delete work want connected to -> Profile page and creator
 
-Create service -> return Services pages 
 
-Order information get inside List of Order -> In profil
+Edit/Delete work want connected to -> Profile page and creator✅
 
-List of service create by the user -> Inside profile Page
+Create service -> return Services pages ✅
 
-Add button inside profil for all profil page
+Order information get inside List of Order -> In profil✅
 
+List of service create by the user -> Inside profile  Page ✅
+
+Add button inside profil for all profil page✅
+
+Add Cloudinary ✅
 
 Add review page (Commentary with rating) 
 with Socket.io
+
+
+
+User --> CR
+Service --> CRUD
+Reservation  --> CR
+
+
+[ ] field "amountOfPeople"
+--> delete from "Service.model"
+
+[ ] field  "totalPrice"
+--> delete from "Service.model"
+
+[ ] delete "date" from "Service.model"
+    - v1. chefs can be booked multiple times on the same dates
+
+[ ] delete "service" from "User.model"
+
+-----
+
+
+
+Bonus:
+- responsive
+- only owner UD ✅
+- images ✅
+- Filter By Place / Price / Available / Specialitie
+- Review -- instead of a separate model, it can be embedded document in Service.
+- service availability (not simple) (ex. a service can not be booked if there's a reservation on the same day)
+
+
+
+
+
+
+
+For the WEEK-END :
+Finish Review render
+
+Test with cloudinary 
+
+Looking for Filter 
+
+Add price to Service List
+
+Add all information inside Details List
+
+Find idea for the HomePage
+
+Reservation =   Add Delete Button / Complete Button / (When you click on the ID you can see the Information of de reservation)
+
+Secure the Road - If you are the creator of your the service, you can't reserve it
+
