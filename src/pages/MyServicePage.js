@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import ServiceCard from "../components/ServiceCard";
-import { Link, useNavigate } from "react-router-dom";
-
+import { Link, useNavigate, useParams } from "react-router-dom";
+import DeleteService from "../components/DeleteService"
 
 function MyServicePage(props){
     const API_URL = "http://localhost:5005";
@@ -22,17 +22,20 @@ function MyServicePage(props){
                 .catch((e => console.log(e)))
         }      
         
-        // const deleteMyService = (e) => {
+        // function deleteService(id){
+        //     const API_URL = "http://localhost:5005";
         //     const storeToken = localStorage.getItem('authToken');
-
-        //     axios
-        //       .delete(`${API_URL}/api/services/${e}`, { headers: { Authorization: `Bearer ${storeToken}` } })
-        //         .then(() => {
-        //           navigate("/profile")
-        //         })
-        //         .catch(e => console.log("error to delete", e));
-        // }
         
+        //     const navigate = useNavigate
+        
+        //         axios
+        //           .delete(`${API_URL}/api/services/${id}`, { headers: { Authorization: `Bearer ${storeToken}` } })
+        //             .then(() => {
+        //               navigate("/services")
+        //             })
+        //             .catch(e => console.log("error to delete", e));
+              
+        // }
 
         useEffect(() => {
             getAllMyServices()
@@ -50,6 +53,7 @@ function MyServicePage(props){
                         <Link to={`/services/edit/${service._id}`}>
                             <button>Edit</button>
                         </Link>
+                            {/* <button onClick={deleteService(service._id)}>Delete</button>  */}
                         </div>
                        )
                     })}
