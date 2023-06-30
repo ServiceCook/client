@@ -11,7 +11,7 @@ function AddNewService(props) {
   const[speciality, setSpeciality] = useState("");
   const[place, setPlace] = useState("");
   const[description, setDescription] = useState("");
-  const[amountOfPeople, setAmountOfPeople] = useState("");
+  //const[amountOfPeople, setAmountOfPeople] = useState("");
   const[pricePerPerson, setPricePerPerson] = useState("");
 
   const handleSubmit = (e) => {
@@ -22,7 +22,7 @@ function AddNewService(props) {
       speciality,
       place,
       description,
-      amountOfPeople,
+      //amountOfPeople,
       pricePerPerson,
     };
 
@@ -34,7 +34,7 @@ function AddNewService(props) {
         setSpeciality("");
         setPlace("");
         setDescription("");
-        setAmountOfPeople("");
+        //setAmountOfPeople("");
         setPricePerPerson("");
         
         props.updateServices();
@@ -78,14 +78,6 @@ function AddNewService(props) {
             name="description"
             value={description}
             onChange={e => {setDescription(e.target.value)}}
-          />
-
-          <label>Amount Of People</label>
-          <input 
-            type="number"
-            name="amountOfPeople"
-            value={amountOfPeople}
-            onChange={e => {setAmountOfPeople(e.target.value)}}
           />
 
           <label>Price Per Person</label>
