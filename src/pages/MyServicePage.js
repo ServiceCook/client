@@ -46,6 +46,13 @@ function MyServicePage(props){
         } else {
             return(
                 <div>
+                        <Link to="/create">
+                            <button>Create Service</button>
+                        </Link>
+
+                        <Link to="/reservations">
+                            <button>Your Order</button>
+                        </Link>
                     {myServices.map((service) => {
                         return(
                         <div>
@@ -55,13 +62,11 @@ function MyServicePage(props){
                         </Link>
                         <IsPrivate><button onClick={() => deleteService(service._id)}>Delete</button></IsPrivate>
                         </div>
-                       )
-                    })}
-                    
+                        )
+                    })}            
                 </div>
             )
         }
-
     }
 
 export default MyServicePage

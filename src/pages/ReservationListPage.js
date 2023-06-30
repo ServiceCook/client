@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-
+import { Link } from "react-router-dom";
 function ReservationListPage() {
   const API_URL = "http://localhost:5005";
 
@@ -25,6 +25,13 @@ function ReservationListPage() {
 
   return (
     <div>
+      <Link to="/create">
+        <button>Create Service</button>
+      </Link>
+      
+      <Link to="/myService">
+        <button>Your Own Service</button>
+      </Link>
       {reservations.map(element => {
         return(
           <div key={element._id}>
