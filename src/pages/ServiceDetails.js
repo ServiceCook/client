@@ -1,6 +1,8 @@
 import axios from "axios"
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom"
+import AddReview from "../components/AddReview";
+import ReviewCard from "../components/ReviewCard";
 
 function ServiceDetails(props){
     
@@ -23,25 +25,30 @@ function ServiceDetails(props){
                 })
                 .catch((e) => console.log(e))
     }
-
+    
     useEffect(() => {
         getService();
     }, []);
 
-    console.log(services);
+
     if(services === undefined){
         return(<h1>Loading...</h1>)
-    }else {
-        
+    }else {      
     return (
         <div className="service-details">
             <h1>{services.speciality}</h1>
             <h2>{services.owner.name}</h2>
             <Link to="/services"><button>Back to the List</button></Link>
             <Link to={`/services/${serviceId}/reserve`}><button>Reservation</button></Link>
+
+            <AddReview getService={getService} serviceId={serviceId} />
+
+            {services && services.reviews.map(review => (
+                <ReviewCard key={review} reviewId={review._id} description={review.description} {...review}/>
+            ))}
         </div>
     )
     }
 } 
 
-export default ServiceDetails
+export default ServiceDetails;
