@@ -13,6 +13,8 @@ function ServiceList(){
         isLoggedIn
     } = useContext(AuthContext)
 
+
+
     const storeToken = localStorage.getItem('authToken');
     const getAllService = () => {
         axios
@@ -24,14 +26,7 @@ function ServiceList(){
         }
     
     
-    const deleteService = (serviceId) => {
-        axios
-            .delete(`${API_URL}/api/services/${serviceId}`, { headers: { Authorization: `Bearer ${storeToken}` } })
-            .then(() => {
-            getAllService(); // Refresh the service list after deleting
-            })
-            .catch((e) => console.log("error to delete", e));
-        };
+
         
 
     useEffect(() => {

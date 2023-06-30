@@ -11,8 +11,28 @@ function AddNewService(props) {
   const[speciality, setSpeciality] = useState("");
   const[place, setPlace] = useState("");
   const[description, setDescription] = useState("");
-  //const[amountOfPeople, setAmountOfPeople] = useState("");
   const[pricePerPerson, setPricePerPerson] = useState("");
+
+  const uploadImage = (file) => {
+    return axios.post(`${API_URL}/api/upload`, file)
+      .then(res => res.data)
+      .catch(e => console.log(e));
+  };
+
+
+  const handleFileUpload = (e) => {
+      const uploadData = new FormData();
+
+  uploadData.append("picture", e.target.files[0]);
+
+  
+    uploadImage(uploadData)
+    .then(response => {
+      console.log(response.picture);
+      setPicture(response.picture);
+    })
+    .catch(err => console.log("Error while uploading the file: ", err));
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -35,14 +55,13 @@ function AddNewService(props) {
         setDescription("");
         setPricePerPerson("");
         
-        props.updateServices();
         navigate("/services")
       })
       .catch(err => {
-        console.log(console.error());
+        console.log(err);
       })
   }
-
+  console.log(picture,speciality);
 
   return(
     <div>
@@ -57,10 +76,9 @@ function AddNewService(props) {
           />
           <label>Image</label>
           <input 
-            type="text"
+            type="file"
             name="picture"
-            value={picture}
-            onChange={e => {setPicture(e.target.value)}}
+            onChange={(e) => handleFileUpload(e)}
           />
 
           <label>Place</label>
@@ -73,7 +91,7 @@ function AddNewService(props) {
           />
 
           <label>Description</label>
-          <input 
+          <textarea 
             type="text"
             name="description"
             value={description}
