@@ -33,7 +33,7 @@ function ServiceList(){
             <div className="list-of-services">
                 {services.map((service) => {
                     return(
-                        <div>
+                        <div key={service._id}>
                             <ServiceCard key={service._id} {...service}/>
                         </div>
                     )
