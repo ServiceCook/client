@@ -41,29 +41,40 @@ function ReservationListPage() {
 
   return (
     <div>
-      <Link to="/create">
-        <button>Create Service</button>
-      </Link>
-      
-      <Link to="/myService">
-        <button>Your Own Service</button>
-      </Link>
-      {reservations.map(element => {
-        return(
-          <div key={element._id}>
-              <h1>{element.fullName}</h1>
-              <p>Total Person: {element.totalPerson}</p>
-              <p>Price Per Person : {element.pricePerPerson} €</p>
-              <p>Total Price: {element.totalPrice} €</p>
-              <p>Date: {element.date}</p>
-              <Link to={`/reservations/edit/${element._id}`}>
-                <button>Edit</button>
-              </Link>
-              <button onClick={() => deleteReservation(element._id)}>Delete</button>
-              
+      <div className="btn-reservation-list">
+        <Link to="/create">
+          <button>Create Service</button>
+        </Link>
+        
+        <Link to="/myService">
+          <button>Your Own Service</button>
+        </Link>
+      </div>
+
+      {reservations.length === 0 
+      ? (
+        <div className="reservation-message">
+          <h3>You haven't made any reservations yet.</h3>
+          <h4>Please, make your order now.</h4>
+          <Link to="/services">
+            <button>Order</button>
+          </Link>
+        </div>
+      ) : (
+        reservations.map((element) => (
+          <div key={element._id} className="reservation-list-page">
+            <p>Total Person: {element.totalPerson}</p>
+            <p>Price Per Person: {element.pricePerPerson} €</p>
+            <p>Total Price: {element.totalPrice} €</p>
+            <h3> Service By {element.fullName}</h3>
+            <p>Date: {element.date}</p>
+            <Link to={`/reservations/edit/${element._id}`}>
+              <button>Edit</button>
+            </Link>
+            <button onClick={() => deleteReservation(element._id)}>Delete</button>
           </div>
-        )
-      })}
+        ))
+      )}
     </div>
   );
 }

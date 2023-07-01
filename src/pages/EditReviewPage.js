@@ -5,7 +5,8 @@ import { useNavigate, useParams } from "react-router-dom";
 const API_URL = "http://localhost:5005";
 
 function EditReviewPage(props) {
-  const[description, setDescription] = useState("");
+  
+const[description, setDescription] = useState("");
   const { reviewId } = useParams();
   const storedToken = localStorage.getItem('authToken');
   
@@ -31,7 +32,7 @@ function EditReviewPage(props) {
     axios
       .put(`${API_URL}/api/reviews/${reviewId}`, requestBodyReview, { headers: { Authorization: `Bearer ${storedToken}` } })
       .then(response => {
-        navigate(`/reviews/${reviewId}`);
+        // navigate(`/reviews/${reviewId}`);
       })
       .catch(err => {
         console.log("failed to update the review", err);
@@ -40,7 +41,6 @@ function EditReviewPage(props) {
 
   return(
     <div>
-      <h3>Edit the Review</h3>
       <form onClick={handleFormSubmitReview}>
         <label>Description</label>
         <input 
@@ -49,6 +49,7 @@ function EditReviewPage(props) {
           value={description}
           onChange={e => setDescription(e.target.value)}
         />
+        
         <button type="submit">Update Review</button>
       </form>
     </div>

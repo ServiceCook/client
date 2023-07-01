@@ -34,6 +34,12 @@ function ReservationPage(props){
                 .catch((e) => console.log(e))
     }
 
+    const sendNotification = () => {
+        // We will Modify this function to send a notification to the owner
+        // using your backend API or any other notification mechanism.
+        console.log("Sending notification to the owner...");
+    };
+
     const getReservation = (e) => {
 
         e.preventDefault();
@@ -60,6 +66,8 @@ function ReservationPage(props){
                     setTotalPrice("");
                     setDate("");
 
+                    sendNotification();
+
                     navigate('/confirmation')
                 })
                 .catch(err => {
@@ -77,17 +85,18 @@ function ReservationPage(props){
         return <h1>Loading...</h1>
     } else {
         return(
-            <div>
+            <div className="reservation-page">
                 <div>
                     <h1>Reservation</h1>
                     <h2>Chef Cook : {fullName}</h2>
                     <h3>Price per Person : {pricePerPerson}$</h3>
                 </div>
-                <form onSubmit={getReservation}>
+                <form onSubmit={getReservation} className="form-reservation">
                     <label>Total Person</label>
                     <input 
                         type="number"
                         name="totalPerson"
+                        min={1}
                         value={totalPerson}
                         onChange={(e) => {setTotalPerson(e.target.value)}}
                     />
@@ -98,11 +107,8 @@ function ReservationPage(props){
                         value={date}
                         onChange={(e) => {setDate(e.target.value)}}
                     />
-                    
-                    <button type="submit">Reserve</button>
-
+                    <button type="submit" >Reserve</button>
                 </form>
-                    <h2>{totalPrice}</h2> 
 
 
             </div>

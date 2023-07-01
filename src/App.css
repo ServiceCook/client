@@ -1,6 +1,9 @@
 .navbar {
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
+  height: 50px;
+  margin-bottom: 50px;
 }
 
 .home-page {
@@ -10,16 +13,26 @@
 .profile {
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
 }
 
 .list-of-services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.service-card-box {
+  padding-left: 10px;
   text-align: center;
+  width: calc(100% - 10px); /* Adjust the width as needed */
 }
 
 a {
   text-decoration: none;
+  padding-left: 10px;
+  padding-left: 10px;
 }
 
 .confirmation-page {
@@ -28,12 +41,19 @@ a {
 
 .service-details {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
 }
 
 .SignupPage, .LoginPage {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .image-service {
@@ -44,6 +64,71 @@ a {
 
 .image-details {
   max-width: 100%;
-  max-height: 500px;
+  max-height: 400px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
 }
+
+.reservation-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn-reservation-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.reservation-page {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.form-reservation {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  flex-wrap: wrap;
+}
+
+.reservation-list-page {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-new-service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.btn-edit-delete-btn-my-service-page {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.my-own-service {
+  text-align: center;
+}
+
+.btn-logout {
+  width: 100px;
+  display: flex;
+  align-items: center;
+}
+

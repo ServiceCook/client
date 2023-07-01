@@ -4,71 +4,89 @@ import ServiceCard from "../components/ServiceCard";
 import { Link } from "react-router-dom";
 import IsPrivate from "../components/IsPrivate";
 
+function MyServicePage(props) {
+  const API_URL = "http://localhost:5005";
+  const [myServices, setMyServices] = useState(undefined);
 
-function MyServicePage(props){
-    const API_URL = "http://localhost:5005";
-    const [myServices, setMyServices] = useState(undefined);
+  const getAllMyServices = () => {
+    const storeToken = localStorage.getItem("authToken");
 
+    axios
+      .get(`${API_URL}/api/myService`, {
+        headers: { Authorization: `Bearer ${storeToken}` },
+      })
+      .then((result) => {
+        console.log(result.data);
+        setMyServices(result.data);
+      })
+      .catch((e) => console.log(e));
+  };
 
-    const getAllMyServices = () => {
-        const storeToken = localStorage.getItem('authToken');
+  const deleteService = (serviceId) => {
+    const storeToken = localStorage.getItem("authToken");
 
-        axios
-            .get(`${API_URL}/api/myService`,  { headers: { Authorization: `Bearer ${storeToken}` } })
-                .then((result) => {
-                    console.log(result.data);
-                    setMyServices(result.data)
-                })
-                .catch((e => console.log(e)))
-    };
-        
-    const deleteService = (serviceId) => {
-        const storeToken = localStorage.getItem("authToken");
-    
-        axios
-            .delete(`${API_URL}/api/services/${serviceId}`, {
-            headers: { Authorization: `Bearer ${storeToken}` },
-            })
-            .then(() => {
-            getAllMyServices();
-            })
-            .catch((error) => {
-            console.log("Failed to delete service:", error);
-            });
-    };
+    axios
+      .delete(`${API_URL}/api/services/${serviceId}`, {
+        headers: { Authorization: `Bearer ${storeToken}` },
+      })
+      .then(() => {
+        getAllMyServices();
+      })
+      .catch((error) => {
+        console.log("Failed to delete service:", error);
+      });
+  };
 
-        useEffect(() => {
-            getAllMyServices()
-        }, []);
+  useEffect(() => {
+    getAllMyServices();
+  }, []);
 
-        console.log(myServices)
+  console.log(myServices);
 
-        if(myServices === undefined){
-            return(<h1>Loading .....</h1>)
-        } else {
-            return(
-                <div className="my-service-page">
-                        <Link to="/create">
-                            <button>Create Service</button>
-                        </Link>
+  if (myServices === undefined) {
+    return <h1>Loading .....</h1>;
+  } else {
+    return (
+      <div>
+        <div className="btn-reservation-list">
+          <Link to="/create">
+            <button>Create Service</button>
+          </Link>
 
-                        <Link to="/reservations">
-                            <button>Your Order</button>
-                        </Link>
-                    {myServices.map((service) => {
-                        return(
-                        <div>
-                            <ServiceCard key={service._id} {...service}/>
-                            <Link to={`/services/edit/${service._id}`}>
-                                <button>Edit</button>
-                            </Link>
-                            <IsPrivate><button onClick={() => deleteService(service._id)}>Delete</button></IsPrivate>
-                        </div>
-                        )
-                    })}            
+          <Link to="/reservations">
+            <button>Your Order</button>
+          </Link>
+        </div>
+        {myServices.length === 0 ? (
+          <div className="reservation-message">
+            <h3>You haven't made any service yet.</h3>
+            <h4>Please, make your service now.</h4>
+          </div>
+        ) : (
+          <div>
+            <h1 className="my-own-service">My Own Service</h1>
+            {myServices.map((service) => {
+              return (
+                <div>
+                  <ServiceCard key={service._id} {...service} />
+                  <div className="btn-edit-delete-btn-my-service-page">
+                    <Link to={`/services/edit/${service._id}`}>
+                      <button>Edit</button>
+                    </Link>
+                    <IsPrivate>
+                      <button onClick={() => deleteService(service._id)}>
+                        Delete
+                      </button>
+                    </IsPrivate>
+                  </div>
                 </div>
-            )
-        }
-    }
+              );
+            })}
+          </div>
+        )}
+      </div>
+    );
+  }
+}
 
-export default MyServicePage
+export default MyServicePage;

@@ -1,9 +1,15 @@
 import axios from "axios";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../context/auth.context";
 
 const API_URL = "http://localhost:5005";
 
 function AddReview(props) {
+  const{
+    isLoggedIn,
+    user
+  } = useContext(AuthContext);
+
   const [description, setDescription] = useState("");
   const [showForm, setShowForm] = useState(false); // Track form visibility
 
@@ -29,26 +35,30 @@ function AddReview(props) {
   
   return(
     <div>
-      <button onClick={toggleFormVisibility}>Give your review</button>
-      {showForm && (
-        <div>
-          <h4>Description</h4>
-          <form onSubmit={handleSubmitNewReview}>
-            <textarea 
-              type="text"
-              name="description"
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-            />
+      {isLoggedIn && user    
+        ? <div>
+          <button onClick={toggleFormVisibility}>Give your review</button>
+          {showForm && (
             <div>
-              <button type="submit">Submit</button>
+              <h4>Description</h4>
+              <form onSubmit={handleSubmitNewReview}>
+                <textarea 
+                  type="text"
+                  name="description"
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                />
+                <div>
+                  <button type="submit">Submit</button>
+                </div>
+              </form>
             </div>
-          </form>
+          )}
         </div>
-      )}
+        : <></>
+      }
 
       <h4>Reviews:</h4>
-     
     </div>
   )
 };

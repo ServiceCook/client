@@ -9,23 +9,24 @@ function ProfilePage() {
 } = useContext(AuthContext)
 
   return(
-    <div className="profile">
-      <div>
-        {isLoggedIn && <h1>Welcome <span>{user.name}</span></h1>}
+    <div>
+      <div className="btn-reservation-list">
+        <Link to="/create">
+          <button>Create Service</button>
+        </Link>
+
+        <Link to="/reservations">
+          <button>Your Order</button>
+        </Link>
+
+        <Link to="/myService">
+          <button>Your Own Service</button>
+        </Link>
       </div>
 
-      <Link to="/create">
-        <button>Create Service</button>
-      </Link>
-
-      <Link to="/reservations">
-        <button>Your Order</button>
-      </Link>
-
-      <Link to="/myService">
-        <button>Your Own Service</button>
-      </Link>
-     
+      <div className="profile">
+        {isLoggedIn && <h1>Welcome <span>{user.name}</span></h1>}
+      </div>
       
     </div>
   )

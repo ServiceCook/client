@@ -6,15 +6,15 @@ function NavBar() {
     const{
         isLoggedIn,
         logOutUser, 
-    } = useContext(AuthContext)
+    } = useContext(AuthContext);
 
     return(
         <nav className="navbar">
-            <Link to="/">
-                <p>Home Page</p>
+            <Link to="/" className="navbar">
+                <p>Home</p>
             </Link>
 
-            <Link to="/services">
+            <Link to="/services" className="navbar">
                 <p>List of Service</p>
             </Link>
 
@@ -23,8 +23,9 @@ function NavBar() {
                     <Link to="/profile">
                         <p>Profile</p>
                     </Link>
-                    <button onClick={logOutUser}>Log Out</button>
-                    {/* <span>{user.name}</span> */}
+                    <div className="btn-logout navbar">
+                        <button onClick={logOutUser} >Log Out</button>
+                    </div>
                 </>
             )}
 
@@ -38,4 +39,4 @@ function NavBar() {
     )
 }
 
-export default NavBar
+export default NavBar;

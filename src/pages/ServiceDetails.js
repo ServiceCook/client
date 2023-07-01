@@ -45,8 +45,8 @@ function ServiceDetails(props){
             <h4>Price Per Person: {services.pricePerPerson} €</h4>
             <h2>Service by {services.owner.name}</h2>
 
+            <Link to={`/services/${serviceId}/reserve`}><button>Reserve</button></Link>
             <Link to="/services"><button>Back to the List</button></Link>
-            <Link to={`/services/${serviceId}/reserve`}><button>Reservation</button></Link>
 
             <AddReview getService={getService} serviceId={serviceId} />
 

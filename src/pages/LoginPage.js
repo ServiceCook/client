@@ -33,7 +33,7 @@ function LoginPage(props) {
         storeToken(response.data.authToken);
 
         authenticateUser()
-        navigate('/');                                 
+        navigate('/services');                                 
       })
       .catch((error) => {
         const errorDescription = error.response.data.message;
@@ -45,7 +45,7 @@ function LoginPage(props) {
     <div className="LoginPage">
       <h1>Login</h1>
 
-      <form onSubmit={handleLoginSubmit}>
+      <form onSubmit={handleLoginSubmit} className="LoginPage">
         <label>Email:</label>
         <input 
           type="email"
