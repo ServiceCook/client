@@ -1,15 +1,17 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+
+
 function ReservationListPage() {
   const API_URL = "http://localhost:5005";
 
   const [reservations, setReservations] = useState([]);
+  const storedToken = localStorage.getItem("authToken");
   
   useEffect(() => {
     const fetchReservations = async () => {
       try {
-        const storedToken = localStorage.getItem("authToken");
         const response = await axios.get(`${API_URL}/api/reservations`, { headers : { Authorization: `Bearer ${storedToken}`}});
 
         setReservations(response.data);
@@ -21,7 +23,21 @@ function ReservationListPage() {
     fetchReservations();
   }, []);
 
-  console.log(reservations);
+  const deleteReservation = (reservationId) => {
+    axios
+      .delete(`${API_URL}/api/reservations/${reservationId}`, {
+        headers: { Authorization: `Bearer ${storedToken}` },
+      })
+      .then(() => {
+        // Remove the deleted reservation from the state
+        setReservations((prevReservations) =>
+          prevReservations.filter((reservation) => reservation._id !== reservationId)
+        );
+      })
+      .catch((error) => {
+        console.log("Failed to delete reservation:", error);
+      });
+  };
 
   return (
     <div>
@@ -36,9 +52,15 @@ function ReservationListPage() {
         return(
           <div key={element._id}>
               <h1>{element.fullName}</h1>
-              {/* <h3>Service ID: {element.service._id}</h3> */}
               <p>Total Person: {element.totalPerson}</p>
+              <p>Price Per Person : {element.pricePerPerson} €</p>
+              <p>Total Price: {element.totalPrice} €</p>
               <p>Date: {element.date}</p>
+              <Link to={`/reservations/edit/${element._id}`}>
+                <button>Edit</button>
+              </Link>
+              <button onClick={() => deleteReservation(element._id)}>Delete</button>
+              
           </div>
         )
       })}

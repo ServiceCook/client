@@ -41,11 +41,13 @@ function MyServicePage(props){
             getAllMyServices()
         }, []);
 
+        console.log(myServices)
+
         if(myServices === undefined){
             return(<h1>Loading .....</h1>)
         } else {
             return(
-                <div>
+                <div className="my-service-page">
                         <Link to="/create">
                             <button>Create Service</button>
                         </Link>
@@ -56,11 +58,11 @@ function MyServicePage(props){
                     {myServices.map((service) => {
                         return(
                         <div>
-                        <ServiceCard key={service._id} {...service}/>
-                        <Link to={`/services/edit/${service._id}`}>
-                            <button>Edit</button>
-                        </Link>
-                        <IsPrivate><button onClick={() => deleteService(service._id)}>Delete</button></IsPrivate>
+                            <ServiceCard key={service._id} {...service}/>
+                            <Link to={`/services/edit/${service._id}`}>
+                                <button>Edit</button>
+                            </Link>
+                            <IsPrivate><button onClick={() => deleteService(service._id)}>Delete</button></IsPrivate>
                         </div>
                         )
                     })}            

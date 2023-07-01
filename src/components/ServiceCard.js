@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom"
 
-function ServiceCard({ speciality, place, picture, _id, owner}) {
+function ServiceCard({ speciality, place, picture, _id, owner, pricePerPerson}) {
     return(
         <div>
-            <h1>{owner.name}</h1>
-            <p>{speciality}</p>
-            {picture ? <img src={picture} alt="img"/> : <p>sorry, no picture</p>}
+            <h1>{speciality}</h1>
+            {picture ? <img src={picture} alt="img" className="image-service"/> : <p>sorry, no picture</p>}
+            <h4>Price {pricePerPerson} €</h4>
+            <h3>Service by {owner.name}</h3>
             <h2>{place}</h2>
-            <Link to={`/services/${_id}`}>
+            <Link to={{ pathname: `/services/${_id}`, state: { picture } }}>
                 <button>Interesting</button>
             </Link>           
         </div>

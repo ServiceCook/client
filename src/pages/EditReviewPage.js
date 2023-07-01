@@ -6,19 +6,16 @@ const API_URL = "http://localhost:5005";
 
 function EditReviewPage(props) {
   const[description, setDescription] = useState("");
-
   const { reviewId } = useParams();
-  
-  console.log(reviewId, "tell me this id");
-
-  const navigate = useNavigate();
-
   const storedToken = localStorage.getItem('authToken');
+  
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
       .get(`${API_URL}/api/reviews/${reviewId}`, { headers: { Authorization: `Bearer ${storedToken}` } })
       .then(response => {
+        console.log(response, "tell me this response");
         const oneReview = response.data;
         setDescription(oneReview.description);
       })
@@ -34,7 +31,7 @@ function EditReviewPage(props) {
     axios
       .put(`${API_URL}/api/reviews/${reviewId}`, requestBodyReview, { headers: { Authorization: `Bearer ${storedToken}` } })
       .then(response => {
-        navigate("/services");
+        navigate(`/reviews/${reviewId}`);
       })
       .catch(err => {
         console.log("failed to update the review", err);
@@ -52,7 +49,6 @@ function EditReviewPage(props) {
           value={description}
           onChange={e => setDescription(e.target.value)}
         />
-
         <button type="submit">Update Review</button>
       </form>
     </div>

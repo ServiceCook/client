@@ -5,9 +5,6 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 
-
-
-
 function LoginPage(props) {
 
   const API_URL = "http://localhost:5005";
@@ -32,12 +29,9 @@ function LoginPage(props) {
       .then((response) => {
 
         console.log(response.data.authToken );
- 
-        // Save the token in the localStorage.   
+   
         storeToken(response.data.authToken);
 
-        // Verify the token by sending a request 
-        // to the server's JWT validation endpoint
         authenticateUser()
         navigate('/');                                 
       })

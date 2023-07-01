@@ -1,14 +1,14 @@
 import axios from "axios"
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom"
+import { Link, useLocation, useParams } from "react-router-dom"
 import AddReview from "../components/AddReview";
 import ReviewCard from "../components/ReviewCard";
 
 function ServiceDetails(props){
     
-    const [services, setServices] = useState(undefined)
-
     const API_URL = "http://localhost:5005"
+    const [services, setServices] = useState(undefined)
+    const location = useLocation();
 
     const { serviceId } = useParams();
 
@@ -36,8 +36,15 @@ function ServiceDetails(props){
     }else {      
     return (
         <div className="service-details">
-            <h1>{services.speciality}</h1>
-            <h2>{services.owner.name}</h2>
+            <h2>{services.speciality}</h2>
+            {services.picture ? <img src={services.picture} alt="Service" className="image-details"/> : <p>No picture available</p>}
+            <h4>Description:
+                <p>{services.description}</p>
+            </h4>
+            <h3>Location: {services.place}</h3>
+            <h4>Price Per Person: {services.pricePerPerson} €</h4>
+            <h2>Service by {services.owner.name}</h2>
+
             <Link to="/services"><button>Back to the List</button></Link>
             <Link to={`/services/${serviceId}/reserve`}><button>Reservation</button></Link>
 

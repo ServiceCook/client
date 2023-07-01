@@ -15,6 +15,8 @@ import ReservationListPage from './pages/ReservationListPage';
 import MyServicePage from './pages/MyServicePage'
 import IsAnon from './components/IsAnon';
 import IsPrivate from './components/IsPrivate'
+import EditReviewPage from './pages/EditReviewPage';
+import EditReservationPage from './pages/EditReservationPage';
 
 
 function App() {
@@ -35,6 +37,8 @@ function App() {
         <Route path='/services/edit/:serviceId' element={ <IsPrivate> <EditServicesPage /> </IsPrivate> } />
         <Route path="/reservations" element={<IsPrivate> <ReservationListPage /> </IsPrivate>} />
         <Route path="/myService" element={ <IsPrivate> <MyServicePage /> </IsPrivate>} />
+        <Route path='/reviews/edit/:reviewId' element={<IsPrivate> <EditReviewPage/> </IsPrivate> }/>
+        <Route path='/reservations/edit/:reservationId' element={<IsPrivate> <EditReservationPage /> </IsPrivate>} />
       </Routes>
     </div>
   );

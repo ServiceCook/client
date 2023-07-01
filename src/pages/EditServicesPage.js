@@ -6,6 +6,7 @@ function EditServicesPage(props) {
   const API_URL = "http://localhost:5005";
 
   const { serviceId } = useParams();
+
   const navigate = useNavigate();
 
   const [picture, setPicture] = useState("");
@@ -44,6 +45,7 @@ function EditServicesPage(props) {
       pricePerPerson,
     };
 
+    // console.log(requestBodyService);
     axios
       .put(`${API_URL}/api/services/${serviceId}`, requestBodyService, { headers: { Authorization: `Bearer ${storeToken}` } })
       .then(response => {
@@ -57,9 +59,9 @@ function EditServicesPage(props) {
     axios
       .delete(`${API_URL}/api/services/${serviceId}`, { headers: { Authorization: `Bearer ${storeToken}` } })
         .then(() => {
-          navigate("/services")
+          navigate("services/")
         })
-        .catch(e => console.log("error to delete", e));
+        .catch(e => console.log("failed to delete", e));
   }
 
   return (

@@ -13,11 +13,7 @@ function deleteService({ _id}){
             .then(() => {
               navigate("/services")
             })
-            .catch(e => console.log("error to delete", e));
-      
+            .catch(e => console.log("error to delete", e));      
 }
     
-
-
-
-export default deleteService
+export default deleteService;

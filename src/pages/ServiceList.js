@@ -1,7 +1,6 @@
 import axios from "axios"
 import { useState, useEffect } from "react"
 import ServiceCard from "../components/ServiceCard";
-import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../context/auth.context"
 
@@ -13,8 +12,6 @@ function ServiceList(){
         isLoggedIn
     } = useContext(AuthContext)
 
-
-
     const storeToken = localStorage.getItem('authToken');
     const getAllService = () => {
         axios
@@ -25,14 +22,9 @@ function ServiceList(){
                 .catch((e => console.log(e)))
         }
     
-    
-
-        
-
     useEffect(() => {
         getAllService();
     }, []);
-
 
     if(services === undefined){
         return(<h1>Loading...</h1>)
@@ -42,14 +34,12 @@ function ServiceList(){
                 {services.map((service) => {
                     return(
                         <div>
- 
                             <ServiceCard key={service._id} {...service}/>
-
                         </div>
                     )
                 })} 
             </div>
-    )
+        )
     }
 }
 

@@ -38,11 +38,7 @@ function SignupPage(props) {
             const error = e.response.data.message;
             setErrorMessage(error);
         })
-
-
-
   };
-
   
   return (
     <div className="SignupPage">
