@@ -225,13 +225,13 @@ Reservation  --> CR
 
 
 [ ] field "amountOfPeople"
---> delete from "Service.model"
+--> delete from "Service.model"✅
 
 [ ] field  "totalPrice"
---> delete from "Service.model"
+--> delete from "Service.model"✅
 
 [ ] delete "date" from "Service.model"
-    - v1. chefs can be booked multiple times on the same dates
+    - v1. chefs can be booked multiple times on the same dates✅
 
 [ ] delete "service" from "User.model"
 
@@ -254,11 +254,11 @@ Bonus:
 
 
 For the WEEK-END :
-Finish Review render
+Finish Review render✅
 
 Test with cloudinary ✅
 
-Looking for Filter 
+Looking for Filter ✅
 
 Add price to Service List ✅
 

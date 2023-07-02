@@ -6,6 +6,7 @@ function ProfilePage() {
   const{
     isLoggedIn,
     user,
+    logOutUser 
 } = useContext(AuthContext)
 
   return(
@@ -21,6 +22,9 @@ function ProfilePage() {
 
         <Link to="/myService">
           <button>Your Own Service</button>
+        </Link>
+        <Link>
+          <button onClick={logOutUser}>Log Out</button>
         </Link>
       </div>
 
