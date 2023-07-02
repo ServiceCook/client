@@ -9,22 +9,22 @@ function NavBar() {
     <div>
       <nav className="navbar">
         <Link to="/" className="navbar">
-          <p>Home</p>
+          <h3>HOME</h3>
         </Link>
 
         <Link to="/services" className="navbar">
-          <p>List of Service</p>
+          <h3>LIST OF SERVICE</h3>
         </Link>
 
         {isLoggedIn && (
           <>
             <Link to="/profile">
-              <p>Profile</p>
+              <h3>PROFILE</h3>
             </Link>
           </>
         )}
 
-        {!isLoggedIn && (
+        {/* {!isLoggedIn && (
           <>
             <Link to="/signup">
               {" "}
@@ -35,7 +35,7 @@ function NavBar() {
               <p>LogIn</p>{" "}
             </Link>
           </>
-        )}
+        )} */}
       </nav>
 
       {/* <div>
