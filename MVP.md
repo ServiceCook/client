@@ -244,7 +244,7 @@ Bonus:
 - only owner UD ✅
 - images ✅
 - Filter By Place / Price / Available / Specialitie
-- Review -- instead of a separate model, it can be embedded document in Service.
+- Review -- instead of a separate model, it can be embedded document in Service.✅
 - service availability (not simple) (ex. a service can not be booked if there's a reservation on the same day)
 
 
@@ -256,17 +256,17 @@ Bonus:
 For the WEEK-END :
 Finish Review render
 
-Test with cloudinary 
+Test with cloudinary ✅
 
 Looking for Filter 
 
-Add price to Service List
+Add price to Service List ✅
 
-Add all information inside Details List
+Add all information inside Details List ✅
 
 Find idea for the HomePage
 
-Reservation =   Add Delete Button / Complete Button / (When you click on the ID you can see the Information of de reservation)
+Reservation =   Add Delete Button / Complete Button / (When you click on the ID you can see the Information of de reservation) ✅
 
 Secure the Road - If you are the creator of your the service, you can't reserve it
 
