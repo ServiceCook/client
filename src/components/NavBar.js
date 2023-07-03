@@ -8,15 +8,13 @@ function NavBar() {
   return (
     <div>
       <nav className="navbar">
-        <ul>
           <Link to="/" className="">
-            <li>Home</li>
+            <p>Home</p>
           </Link>
 
           <Link to="/services" className="">
-            <li>Our chefs</li>
+            <p>Our chefs</p>
           </Link>
-        </ul>
 
         {isLoggedIn && (
           <>

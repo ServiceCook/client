@@ -42,7 +42,7 @@ function SignupPage(props) {
   };
   
   return (
-    <div className="SignupPage-Form">
+    <div className="SignupPage-Container">
       <h1>Sign Up</h1>
 
       <form onSubmit={handleSignupSubmit} className="SignupPage-Form">
@@ -52,6 +52,7 @@ function SignupPage(props) {
           name="email"
           value={email}
           onChange={handleEmail}
+          className="email"
         />
 
         <label>Password</label>
@@ -60,6 +61,7 @@ function SignupPage(props) {
           name="password"
           value={password}
           onChange={handlePassword}
+          className="password"
         />
 
         <label>Name</label>
@@ -68,6 +70,7 @@ function SignupPage(props) {
           name="name"
           value={name}
           onChange={handleName}
+          className="name"
         />
         
         <label>Address</label>
@@ -76,6 +79,7 @@ function SignupPage(props) {
           name="address"
           value={address}
           onChange={handleAddress}
+          className="address"
         />
         
         {/* <label>Picture</label>

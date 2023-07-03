@@ -2,6 +2,17 @@
   overflow: hidden;
 }
 
+.navbar {
+  display: flex;
+  flex-direction: row;
+}
+
+a {
+  text-decoration: none;
+  padding-left: 10px;
+  padding-left: 10px;
+}
+
 nav {
   margin: 0px;
   background-color: #074220;
@@ -29,11 +40,6 @@ nav .navbarAuth{
 }
 
 nav .btn-logout {
-<<<<<<< HEAD
-  border: none;
-=======
-  border: none ;
->>>>>>> b7a493fb28d3a1a0a471feff5d54276e6a176eef
   color: white;
   width: 100px;
   display: flex;
@@ -174,12 +180,6 @@ nav .btn-logout {
   margin: 0em;
 }
 
-a {
-  text-decoration: none;
-  padding-left: 10px;
-  padding-left: 10px;
-}
-
 .confirmation-page {
   text-align: center;
 }
@@ -202,13 +202,10 @@ a {
   padding: 0;
 }
 
-.SignupPage-Form, .LoginPage-Form {
+.SignupPage-Container, .LoginPage-Container {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
-  width: 300px;
-  background-color: grey;
+  flex-direction: column;
 }
 
 .signup-login {
@@ -289,9 +286,6 @@ a {
   text-align: center;
 }
 
-
-
-
 @media (max-width: 800px) {
   .filter-input {
     display: flex;
@@ -310,6 +304,8 @@ a {
     border: 2px solid #f8bddf;
   }
 }
+
+
 
 .footer{
   background-color: #074220;
