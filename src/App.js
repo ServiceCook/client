@@ -17,7 +17,7 @@ import IsAnon from './components/IsAnon';
 import IsPrivate from './components/IsPrivate'
 import EditReviewPage from './pages/EditReviewPage';
 import EditReservationPage from './pages/EditReservationPage';
-
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -40,6 +40,8 @@ function App() {
         <Route path='/reviews/edit/:reviewId' element={<IsPrivate> <EditReviewPage/> </IsPrivate> }/>
         <Route path='/reservations/edit/:reservationId' element={<IsPrivate> <EditReservationPage /> </IsPrivate>} />
       </Routes>
+
+      <Footer />
     </div>
   );
 }
