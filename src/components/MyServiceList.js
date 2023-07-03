@@ -12,10 +12,14 @@ function ServiceCard({ speciality, place, picture, _id, owner, pricePerPerson , 
                     {picture ? <img src={picture} alt="img"/> : <p>sorry, no picture</p>}
                 </div>
                 <div className="description-list">
-                    <h2>{speciality}</h2>
-                    <h4>Price Per Person : {pricePerPerson} €</h4>
-                    <h3>By : {owner.name}</h3>
-                    <h2>{place}</h2>
+                    <h1>{owner.name}</h1>
+                    <div>
+                        <h3>{speciality}</h3>
+                        <p>{place}</p>
+                    </div>
+                    <div>
+                        <h4>Price : {pricePerPerson} €</h4>
+                    </div>
                 </div>
                 </Link>
                 <div className="Service-page-Btn">

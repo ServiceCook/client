@@ -77,7 +77,7 @@ function AddNewService(props) {
       </div>
 
       <form onSubmit={handleSubmit} className="add-new-service">
-        <label>Speciality</label>
+        <label>Speciality :</label>
         <input
           type="text"
           name="speciality"
@@ -87,14 +87,14 @@ function AddNewService(props) {
             setSpeciality(e.target.value);
           }}
         />
-        <label>Image</label>
+        <label>Image :</label>
         <input
           type="file"
           name="picture"
           onChange={(e) => handleFileUpload(e)}
         />
 
-        <label>Place</label>
+        <label>Place :</label>
         <input
           type="text"
           name="place"
@@ -105,7 +105,7 @@ function AddNewService(props) {
           }}
         />
 
-        <label>Description</label>
+        <label>Description :</label>
         <textarea
           type="text"
           name="description"
@@ -115,7 +115,7 @@ function AddNewService(props) {
           }}
         />
 
-        <label>Price Per Person</label>
+        <label>Price Per Person :</label>
         <input
           type="number"
           name="pricePerPerson"

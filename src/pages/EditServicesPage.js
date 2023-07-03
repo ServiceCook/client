@@ -54,19 +54,9 @@ function EditServicesPage(props) {
       .catch(e => console.log("failed to edit the service", e));
   };
 
-
-  const deleteService = () => {
-    axios
-      .delete(`${API_URL}/api/services/${serviceId}`, { headers: { Authorization: `Bearer ${storeToken}` } })
-        .then(() => {
-          navigate("services/")
-        })
-        .catch(e => console.log("failed to delete", e));
-  }
-
   return (
-    <div className="edit-service-page">
-      <form onSubmit={handleSubmitUpdate}>
+    <div >
+      <form onSubmit={handleSubmitUpdate} className="edit-service-page">
         <label>Speciality</label>
         <input
           type="text"
@@ -115,8 +105,6 @@ function EditServicesPage(props) {
         />
         <button type="submit">Update</button>
       </form>
-
-      <button onClick={deleteService}>Delete</button>
     </div>
   );
 }
