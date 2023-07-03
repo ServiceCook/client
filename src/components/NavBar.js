@@ -7,16 +7,15 @@ function NavBar() {
 
   return (
     <div>
-      <nav className="navbar">
-        <ul>
-          <Link to="/" className="">
-            <li>Home</li>
+      <nav>
+          <Link to="/" >
+            <p>Home</p>
           </Link>
 
-          <Link to="/services" className="">
-            <li>Our chefs</li>
+          <Link to="/services" >
+            <p>Our chefs</p>
           </Link>
-        </ul>
+       
 
         {isLoggedIn && (
           <>
@@ -24,7 +23,7 @@ function NavBar() {
               <p>Profile</p>
             </Link>
             <Link to="/message">
-              <p>Message</p>
+              <p>Contact Us</p>
             </Link>
           </>
         )}
@@ -34,11 +33,11 @@ function NavBar() {
             <div className='signup-login'>
               <Link to="/signup">
                 {" "}
-                <button>Sign Up</button>{" "}
+                <p>Sign Up</p>{" "}
               </Link>
               <Link to="/login">
                 {" "}
-                <button>LogIn</button>{" "}
+                <p>LogIn</p>{" "}
               </Link>
             </div>
           </>
@@ -48,7 +47,7 @@ function NavBar() {
       {isLoggedIn && (
           <>
             <div className="btn-logout navbar">
-              <button onClick={logOutUser}>Log Out</button>
+              <p onClick={logOutUser}>Log Out</p>
             </div>
           </>
         )}

@@ -24,22 +24,19 @@ nav .navbarAuth{
   float: right;
   position: absolute;
   right: 0;
-  top: 10px;
-  margin-right: 10px;
+  padding-right: 2em;
+}
+nav .navbarAuth p{
+  margin: 1em 1.5em ;
 }
 
+
+
 nav .btn-logout {
-<<<<<<< HEAD
-  border: none;
-=======
-  border: none ;
->>>>>>> b7a493fb28d3a1a0a471feff5d54276e6a176eef
   color: white;
-  width: 100px;
-  display: flex;
-  align-items: center;
-  position: absolute;
+  float: right;
   right: 0;
+  padding-right: 2em;
 }
 
 

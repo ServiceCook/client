@@ -51,7 +51,7 @@ function MessagePage() {
             type="submit"
             variant="contained"
 
-          >Send></button>
+          >Send</button>
         </form>
     </div>
   )
