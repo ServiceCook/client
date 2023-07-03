@@ -7,6 +7,7 @@
 .navbar {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 a {
@@ -50,6 +51,7 @@ nav .btn-logout {
   float: right;
   right: 0;
   padding-right: 2em;
+  cursor: pointer;
 }
 
 
@@ -142,9 +144,6 @@ nav .btn-logout {
 }
 
 
-
-
-
 /*List of Service */
 
 .list-of-services {
@@ -157,7 +156,8 @@ nav .btn-logout {
   display: flex;
   flex-direction: row;
   align-items: start;
-  margin: 2em 0em 2em 6em;
+  flex-wrap: wrap;
+  margin: 2em 0em 2em 2.5em;
 }
 
 .filter-input {
@@ -180,9 +180,13 @@ nav .btn-logout {
 .service-card-box {
   width: 100%;
   background-color: #EBEBEB;
-  margin: 2em;
+  margin-left: auto;
+  margin-right: auto;
   height: 45vh;
+  display: flex;
+  flex-wrap: wrap;
 }
+
 
 
 .description-service p, 
@@ -204,8 +208,8 @@ nav .btn-logout {
   width: 100%;
   height: 10em;
   margin: 0em;
-
 }
+
 .description-service h4{
   float: right;
   margin: 0em 2em;
@@ -219,6 +223,16 @@ nav .btn-logout {
  
 .description-list-spe{
   margin: 0em 1em;
+}
+
+.container-service-card-list {
+  margin-bottom: 2em;
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+.available-status {
+  margin-left: 15px;
 }
 
 
@@ -511,4 +525,12 @@ nav .btn-logout {
   text-transform: uppercase;
   font-size: 15px;
   border-radius: 25px;
+}
+
+.gold-star {
+  color: gold;
+}
+
+.profile-picture {
+  width: 100px;
 }

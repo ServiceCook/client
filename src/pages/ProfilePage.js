@@ -3,7 +3,7 @@ import { AuthContext } from "../context/auth.context";
 import { Link } from "react-router-dom";
 
 function ProfilePage() {
-  const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
+  const { isLoggedIn, user } = useContext(AuthContext);
 
 
   return(
@@ -24,12 +24,14 @@ function ProfilePage() {
 
       <div className="profile">
         {isLoggedIn && (
-          <>
+          <div>
             <h1>Welcome <span>{user.name}</span></h1>
-            <img src={user.picture} alt="img" />
+            <div>
+              <img src={user.picture} alt="img" className="profile-picture"/>
+            </div>
             <h3>Address: {user.address}</h3>
             <p>Email: {user.email}</p>
-          </>
+          </div>
         )}
       </div>
     </div>
