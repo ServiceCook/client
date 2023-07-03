@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 function ServiceCard({ speciality, place, picture, _id, owner, pricePerPerson}) {
     return(
         <div className="service-card-box">
-            <div class="description-service">
+            <div className="description-service">
             <Link to={{ pathname: `/services/${_id}`, state: { picture } }}>
                 <div>
                     {picture ? <img src={picture} alt="img"/> : <p>sorry, no picture</p>}

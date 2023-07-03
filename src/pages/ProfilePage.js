@@ -23,9 +23,6 @@ function ProfilePage() {
         <Link to="/myService">
           <button>Your Own Service</button>
         </Link>
-        <Link>
-          <button onClick={logOutUser}>Log Out</button>
-        </Link>
       </div>
 
       <div className="profile">

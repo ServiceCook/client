@@ -32,6 +32,7 @@ function SignupPage(props) {
 
     axios.post(`${API_URL}/auth/signup`, requestBody)
         .then((res) => {
+          console.log(res);
             navigate('/login')
         })
         .catch((e) => {
@@ -41,11 +42,11 @@ function SignupPage(props) {
   };
   
   return (
-    <div className="SignupPage">
+    <div className="SignupPage-Form">
       <h1>Sign Up</h1>
 
-      <form onSubmit={handleSignupSubmit} className="SignupPage">
-        <label>Email:</label>
+      <form onSubmit={handleSignupSubmit} className="SignupPage-Form">
+        <label>Email</label>
         <input 
           type="email"
           name="email"
@@ -53,7 +54,7 @@ function SignupPage(props) {
           onChange={handleEmail}
         />
 
-        <label>Password:</label>
+        <label>Password</label>
         <input 
           type="password"
           name="password"
@@ -61,7 +62,7 @@ function SignupPage(props) {
           onChange={handlePassword}
         />
 
-        <label>Name:</label>
+        <label>Name</label>
         <input 
           type="text"
           name="name"
@@ -69,13 +70,20 @@ function SignupPage(props) {
           onChange={handleName}
         />
         
-        <label>Address:</label>
+        <label>Address</label>
         <input 
           type="text"
           name="address"
           value={address}
           onChange={handleAddress}
         />
+        
+        {/* <label>Picture</label>
+        <input 
+          type="file"
+          name="picture"
+          value={picture}
+        /> */}
 
         <button type="submit">Sign Up</button>
       </form>

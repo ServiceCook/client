@@ -21,19 +21,24 @@ function NavBar() {
             <Link to="/profile">
               <p>Profile</p>
             </Link>
+            <Link to="/message">
+              <p>Message</p>
+            </Link>
           </>
         )}
       <div className="navbarAuth">
         {!isLoggedIn && (
           <>
-            <Link to="/signup">
-              {" "}
-              <p>Sign Up</p>{" "}
-            </Link>
-            <Link to="/login">
-              {" "}
-              <p>LogIn</p>{" "}
-            </Link>
+            <div className='signup-login'>
+              <Link to="/signup">
+                {" "}
+                <button>Sign Up</button>{" "}
+              </Link>
+              <Link to="/login">
+                {" "}
+                <button>LogIn</button>{" "}
+              </Link>
+            </div>
           </>
         )}
 

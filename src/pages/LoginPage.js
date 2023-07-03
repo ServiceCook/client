@@ -42,10 +42,10 @@ function LoginPage(props) {
   };
   
   return (
-    <div className="LoginPage">
+    <div className="LoginPage-Form">
       <h1>Login</h1>
 
-      <form onSubmit={handleLoginSubmit} className="LoginPage">
+      <form onSubmit={handleLoginSubmit} className="LoginPage-Form">
         <label>Email:</label>
         <input 
           type="email"

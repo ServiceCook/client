@@ -18,6 +18,7 @@ import IsPrivate from './components/IsPrivate'
 import EditReviewPage from './pages/EditReviewPage';
 import EditReservationPage from './pages/EditReservationPage';
 import Footer from './components/Footer'
+import MessagePage from './pages/MessagePage';
 
 function App() {
   return (
@@ -39,8 +40,8 @@ function App() {
         <Route path="/myService" element={ <IsPrivate> <MyServicePage /> </IsPrivate>} />
         <Route path='/reviews/edit/:reviewId' element={<IsPrivate> <EditReviewPage/> </IsPrivate> }/>
         <Route path='/reservations/edit/:reservationId' element={<IsPrivate> <EditReservationPage /> </IsPrivate>} />
+        <Route path='/message' element={<MessagePage />}/>
       </Routes>
-
       <Footer />
     </div>
   );
