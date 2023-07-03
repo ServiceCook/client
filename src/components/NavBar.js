@@ -8,23 +8,23 @@ function NavBar() {
   return (
     <div>
       <nav className="navbar">
-        <Link to="/" className="navbar">
-          <h3>HOME</h3>
+        <Link to="/" className="">
+          <p>Home</p>
         </Link>
 
-        <Link to="/services" className="navbar">
-          <h3>LIST OF SERVICE</h3>
+        <Link to="/services" className="">
+          <p>Our chefs</p>
         </Link>
 
         {isLoggedIn && (
           <>
             <Link to="/profile">
-              <h3>PROFILE</h3>
+              <p>Profile</p>
             </Link>
           </>
         )}
-
-        {/* {!isLoggedIn && (
+      <div className="navbarAuth">
+        {!isLoggedIn && (
           <>
             <Link to="/signup">
               {" "}
@@ -35,10 +35,9 @@ function NavBar() {
               <p>LogIn</p>{" "}
             </Link>
           </>
-        )} */}
-      </nav>
+        )}
 
-      {/* <div>
+        
       {isLoggedIn && (
           <>
             <div className="btn-logout navbar">
@@ -46,7 +45,10 @@ function NavBar() {
             </div>
           </>
         )}
-      </div> */}
+      </div>
+      </nav>
+
+
     </div>
   );
 }

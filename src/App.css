@@ -1,14 +1,109 @@
-.navbar {
+
+
+
+nav {
+  margin: 0px;
+  background-color: #074220;
   display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  height: 50px;
-  /* margin-bottom: 50px; */
+  height: 3em;
 }
 
-.home-page {
-  text-align: center;
+nav h3, nav p{
+  text-decoration: none;
+  color: white;
+  margin-left: 6em;
+  font-size: 0.9em;
 }
+
+nav h3, nav p:hover{
+  color: #f8bddf;
+}
+
+nav .navbarAuth{
+  display: flex;
+  float: right;
+}
+
+nav .btn-logout {
+  border: none ;
+  background-color: black;
+  color: white;
+  width: 100px;
+  display: flex;
+  align-items: center;
+}
+
+
+.coverHomepage img{
+  width: 100%;
+  position: relative;
+  height: auto;
+  margin: 0;
+}
+
+.coverHomepage div{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+  font-size: 1.5em;
+  top: 40%;
+  left: 30%; 
+}
+.coverHomepage h1 {
+  color: white;
+}
+
+
+.article-home{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 100%;
+  height: 60em;
+  background-color: #EBEBEB;
+  padding: 5em;
+}
+
+.carousselHome{
+  background-color: #074220;
+  width: 40%;
+  height: 75%;
+  color: white;
+}
+
+.carousselHome img{
+  width: 100%;
+}
+
+.carousselHome h1, .carousselHome p, .carousselHome h3{
+  margin: 1em 2em;
+  text-decoration: none;
+}
+
+.carousselHome h1{
+  font-size: 1.5em;
+}
+
+.carousselHome p{
+  font-size: 1.2em;
+}
+
+.carousselHome h3{
+  color: white;
+  font-size: 1em;
+  font-weight: 500;
+  transition: 1s;
+}
+
+.carousselHome h3:hover{
+  color: #f8bddf;
+  text-decoration: underline;
+}
+
+
+
 
 .profile {
   display: flex;
@@ -25,53 +120,51 @@
 
 .container-filter-by-place {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  align-items: start;
+  margin: 2em 0em 2em 6em;
 }
 
 .filter-input {
   display: flex;
-  flex-wrap: wrap;
-  width: 500px;
+  flex-direction: row;
   height: 30px;
-  border-radius: 25px;
   text-align: center;
+  margin: 0.5em;
 }
 
 .filter-input:hover {
-  border: 4px solid lightskyblue;
-  width: 600px;
+  border: 2px solid #f8bddf;
   transition: 0.5s ease-out;
 }
 
 .filter-input:active {
-  border: 4px solid lightskyblue;
+  border: 2px solid #f8bddf;
 }
 
 .service-card-box {
-  padding: 10px;
   text-align: center;
   width: calc(100% - 10px);
-  margin: 8px;
+  margin: 1em;
+  background-color: black;
 }
 
-.description-service {
-  margin: 0;
-  padding: 0;
+.description-list{
+  padding-bottom: 0.8em;
 }
 
 .description-service h4, 
 .description-service h3,
 .description-service h2 {
-  margin: 2px;
+  margin: 1em;
+  text-decoration: none;
+  color: white;
 }
 
-.image-service {
-  max-width: 100%;
-  max-height: 200px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  border: 2px solid black;
+.description-service img {
+  width: 100%;
+  height: 15em;
+  margin: 0em;
 }
 
 a {
@@ -187,32 +280,24 @@ a {
   text-align: center;
 }
 
-.btn-logout {
-  width: 100px;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-}
+
 
 
 @media (max-width: 800px) {
   .filter-input {
     display: flex;
     flex-wrap: wrap;
-    width: 200px;
-    height: 30px;
-    border-radius: 25px;
+    width: 15em;
+    height: 2.2em;
     text-align: center;
   }
   
   .filter-input:hover {
-    border: 4px solid lightskyblue;
-    width: 250px;
+    border: 2px solid #f8bddf;
     transition: 0.5s ease-out;
   }
   
   .filter-input:active {
-    border: 4px solid lightskyblue;
-    width: 250px;
+    border: 2px solid #f8bddf;
   }
 }

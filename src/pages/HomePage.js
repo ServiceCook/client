@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
-import coverImg from '../images/Homepage.png'
-import descriptionImg from '../images/homepageDescription.jpg'
+import descriptionImg from '../images/Homepage.png'
+import coverImg from '../images/homepageDescription.jpg'
+import pasta from '../images/Pasta.jpg'
 import { useContext } from 'react';
 import { AuthContext } from '../context/auth.context';
 
@@ -9,7 +10,7 @@ function HomePage() {
 
     return (
       <div className="home-page">
-        <div className='signup-login'>
+        {/* <div className='signup-login'>
         {!isLoggedIn 
         ? (
           <>
@@ -26,24 +27,26 @@ function HomePage() {
               My Aspiration
             </Link>
           </>}
+        </div> */}
+
+        <div className='coverHomepage'>
+          <img src={pasta} alt="HomePage"/>
+        <div>
+            <h1>Restaurant quality at home</h1>
+        </div>
         </div>
 
-
-        <div>
-          <img src={coverImg} alt="HomePage"/>
-            <h1>Name of Applicatation</h1>
-            <p></p>
-        </div>
-
-        <div>
+        <div className='article-home'>
+        <div className='carousselHome'>
           <img src={descriptionImg} alt='descriptionImg'/>
           <div>
             <h1>Who are we ? </h1>
             <p>We make our application available for any individual looking for a home chef and for home chefs looking for customers in their area.</p>
-            <Link to="/services">Look all chef </Link>
+            <Link to="/services"><h3>Look all chef →</h3></Link>
           </div>
         </div>
       </div>
+    </div>
     );
   }
   
