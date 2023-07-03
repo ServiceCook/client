@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import ServiceCard from "../components/ServiceCard";
+import MyServiceCard from '../components/MyServiceList'
 import { Link } from "react-router-dom";
 import IsPrivate from "../components/IsPrivate";
 
@@ -41,8 +41,6 @@ function MyServicePage(props) {
     getAllMyServices();
   }, []);
 
-  console.log(myServices);
-
   if (myServices === undefined) {
     return <h1>Loading .....</h1>;
   } else {
@@ -63,28 +61,22 @@ function MyServicePage(props) {
             <h4>Please, make your service now.</h4>
           </div>
         ) : (
-          <div>
-            <h1 className="my-own-service">My Own Service</h1>
+          <>
+          <h1 className="my-own-service">My Own Service</h1>
+          <div className="list-of-services">
             {myServices.map((service) => {
               return (
+
                 <div>
-                  <ServiceCard key={service._id} {...service} />
-                  <div className="btn-edit-delete-btn-my-service-page">
-                    <Link to={`/services/edit/${service._id}`}>
-                      <button>Edit</button>
-                    </Link>
-                    <IsPrivate>
-                      <button onClick={() => deleteService(service._id)}>
-                        Delete
-                      </button>
-                    </IsPrivate>
-                  </div>
+                  <MyServiceCard key={service._id} {...service} deleteService={deleteService} />
                 </div>
               );
             })}
           </div>
+          </>
         )}
       </div>
+      
     );
   }
 }

@@ -2,6 +2,8 @@
   overflow: hidden;
 }
 
+/* Navbar */
+
 .navbar {
   display: flex;
   flex-direction: row;
@@ -50,6 +52,11 @@ nav .btn-logout {
   padding-right: 2em;
 }
 
+
+
+
+
+/*HomePage css*/
 
 .coverHomepage img{
   width: 100%;
@@ -120,12 +127,25 @@ nav .btn-logout {
 }
 
 
+
+
+
+
+/* Profile Page */
+
 .profile {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   text-align: center;
+  height: 58vh;
 }
+
+
+
+
+
+/*List of Service */
 
 .list-of-services {
   display: flex;
@@ -182,9 +202,56 @@ nav .btn-logout {
   margin: 0em;
 }
 
-.confirmation-page {
+@media (max-width: 800px) {
+  .filter-input {
+    display: flex;
+    flex-wrap: wrap;
+    width: 15em;
+    height: 2.2em;
+    text-align: center;
+  }
+  
+  .filter-input:hover {
+    border: 2px solid #f8bddf;
+    transition: 0.5s ease-out;
+  }
+  
+  .filter-input:active {
+    border: 2px solid #f8bddf;
+  }
+}
+
+
+/* For profil Service */
+
+.my-own-service{
   text-align: center;
 }
+
+.my-service-card{
+  background-color: black;
+}
+
+.Service-page-Btn{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 1em;
+}
+
+.Service-page-Btn button{
+  border: none;
+  color: white;
+  background-color: black;
+}
+
+.Service-page-Btn button:hover{
+  color: #f8bddf;
+  text-decoration: underline;
+}
+
+
+/*Service details Page */
 
 .service-details {
   text-align: center;
@@ -204,18 +271,6 @@ nav .btn-logout {
   padding: 0;
 }
 
-.SignupPage-Container, .LoginPage-Container {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-.signup-login {
-  display: flex;
-  justify-content: end;
-  flex-wrap: wrap;
-  align-items: center;
-}
 
 .image-details {
   max-width: 500px;
@@ -232,6 +287,38 @@ nav .btn-logout {
   transition: 0.5 ease-in-out;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+/* Signup / Login */
+.SignupPage-Container, .LoginPage-Container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.signup-login {
+  display: flex;
+  justify-content: end;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+
+
+
+
+
+
+/* Reservation Page */
 .reservation-message {
   display: flex;
   flex-direction: column;
@@ -270,6 +357,10 @@ nav .btn-logout {
   align-items: center;
 }
 
+
+
+
+/* Form Create service */
 .add-new-service {
   display: flex;
   flex-direction: column;
@@ -278,37 +369,11 @@ nav .btn-logout {
   margin-top: 50px;
 }
 
-.btn-edit-delete-btn-my-service-page {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.my-own-service {
-  text-align: center;
-}
-
-@media (max-width: 800px) {
-  .filter-input {
-    display: flex;
-    flex-wrap: wrap;
-    width: 15em;
-    height: 2.2em;
-    text-align: center;
-  }
-  
-  .filter-input:hover {
-    border: 2px solid #f8bddf;
-    transition: 0.5s ease-out;
-  }
-  
-  .filter-input:active {
-    border: 2px solid #f8bddf;
-  }
-}
 
 
 
+
+/* Footer */
 .footer{
   background-color: #074220;
   color: #f8bddf;
@@ -341,6 +406,9 @@ nav .btn-logout {
   padding-bottom: 0.8em;
 }
 
+
+
+/* Contact Us */
 .contact-contianer {
   display: flex;
   align-items: center;

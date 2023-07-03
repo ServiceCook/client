@@ -10,7 +10,7 @@ function ProfilePage() {
 } = useContext(AuthContext)
 
   return(
-    <div>
+    <div className="profilPage">
       <div className="btn-reservation-list">
         <Link to="/create">
           <button>Create Service</button>

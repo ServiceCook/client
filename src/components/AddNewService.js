@@ -63,7 +63,6 @@ function AddNewService(props) {
         console.log(err);
       });
   };
-  console.log(picture, speciality);
 
   return (
     <div>
