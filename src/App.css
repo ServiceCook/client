@@ -21,7 +21,6 @@ nav h3, nav p:hover{
 }
 
 nav .navbarAuth{
-  display: flex;
   float: right;
   position: absolute;
   right: 0;
@@ -30,7 +29,11 @@ nav .navbarAuth{
 }
 
 nav .btn-logout {
+<<<<<<< HEAD
   border: none;
+=======
+  border: none ;
+>>>>>>> b7a493fb28d3a1a0a471feff5d54276e6a176eef
   color: white;
   width: 100px;
   display: flex;
@@ -143,7 +146,7 @@ nav .btn-logout {
 }
 
 .filter-input:active {
-  border: 2px solid #f8bddf;
+  border: 1px solid #f8bddf;
 }
 
 .service-card-box {

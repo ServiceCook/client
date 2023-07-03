@@ -8,13 +8,15 @@ function NavBar() {
   return (
     <div>
       <nav className="navbar">
-        <Link to="/" className="">
-          <p>Home</p>
-        </Link>
+        <ul>
+          <Link to="/" className="">
+            <li>Home</li>
+          </Link>
 
-        <Link to="/services" className="">
-          <p>Our chefs</p>
-        </Link>
+          <Link to="/services" className="">
+            <li>Our chefs</li>
+          </Link>
+        </ul>
 
         {isLoggedIn && (
           <>
@@ -51,6 +53,7 @@ function NavBar() {
           </>
         )}
       </div>
+      
       </nav>
 
 
