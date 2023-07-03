@@ -42,7 +42,7 @@ function LoginPage(props) {
   };
   
   return (
-    <div className="LoginPage-Form">
+    <div className="LoginPage-Container">
       <h1>Login</h1>
 
       <form onSubmit={handleLoginSubmit} className="LoginPage-Form">
@@ -52,6 +52,7 @@ function LoginPage(props) {
           name="email"
           value={email}
           onChange={handleEmail}
+          className="email"
         />
 
         <label>Password:</label>
@@ -60,6 +61,7 @@ function LoginPage(props) {
           name="password"
           value={password}
           onChange={handlePassword}
+          className="password"
         />
 
         <button type="submit">Login</button>
