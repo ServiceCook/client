@@ -32,7 +32,7 @@ function HomePage() {
         <div className='coverHomepage'>
           <img src={pasta} alt="HomePage"/>
         <div>
-            <h1>Restaurant quality at home</h1>
+            <h1>Chef on the way</h1>
         </div>
         </div>
 
