@@ -55,28 +55,13 @@ function EditReservationPage(props) {
   return(
     <div className="edit-reservation-page">
       <form onSubmit={handleEditReservation}>
-        <label>Full Name</label>
-        <input 
-          type="text"
-          name="fullName"
-          value={fullName}
-          onChange={e => {setFullName(e.target.value)}}
-        />
-
+        
         <label>Total Person</label>
         <input 
           type="number"
           name="totalPerson"
           value={totalPerson}
           onChange={e => {setTotalPerson(e.target.value)}}
-        />
-
-        <label>Price Per Person</label>
-        <input 
-          type="number"
-          name="pricePerPerson"
-          value={pricePerPerson}
-          onChange={e => {setPricePerPerson(e.target.value)}}
         />
 
         <label>Total Price</label>
