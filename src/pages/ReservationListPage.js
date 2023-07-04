@@ -67,7 +67,7 @@ function ReservationListPage() {
             <p>Price Per Person: {element.pricePerPerson} €</p>
             <p>Total Price: {element.totalPrice} €</p>
             <h3> Service By {element.fullName}</h3>
-            <p>Date: {element.date}</p>
+            <p>Date: {new Date(element.date).toLocaleDateString("en", { day: "2-digit", month: "long", year: "numeric" })}</p>
             <Link to={`/reservations/edit/${element._id}`}>
               <button>Edit</button>
             </Link>
