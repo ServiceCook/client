@@ -15,6 +15,7 @@ function EditServicesPage(props) {
   const [description, setDescription] = useState("");
   const [amountOfPeople, setAmountOfPeople] = useState("");
   const [pricePerPerson, setPricePerPerson] = useState("");
+  const [availability, setAvailability] = useState("");
 
   const storeToken = localStorage.getItem('authToken');
 
@@ -29,6 +30,7 @@ function EditServicesPage(props) {
         setDescription(oneService.description);
         setAmountOfPeople(oneService.amountOfPeople);
         setPricePerPerson(oneService.pricePerPerson);
+        setAvailability(oneService.availability)
       })
       .catch(e => console.log("failed to fetch the service", e));
   }, [serviceId, storeToken]);
@@ -43,6 +45,7 @@ function EditServicesPage(props) {
       description,
       amountOfPeople,
       pricePerPerson,
+      availability
     };
 
     // console.log(requestBodyService);
@@ -102,6 +105,13 @@ function EditServicesPage(props) {
           name="pricePerPerson"
           value={pricePerPerson}
           onChange={e => { setPricePerPerson(e.target.value) }}
+        />
+
+        <input 
+          type="text"
+          name="availability"
+          value={availability}
+          onChange={e => { setAvailability(e.target.value)}}
         />
         <button type="submit">Update</button>
       </form>

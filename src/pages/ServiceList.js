@@ -18,6 +18,7 @@ function ServiceList() {
     axios
       .get(`${API_URL}/api/services`, { headers: { Authorization: `Bearer ${storeToken}` }})
       .then((result) => {
+        console.log(result.data, "tell me if I can find the availability field");
         let filteredServices = result.data.filter((element) => {
           const matchesPlace = element.place.toLowerCase().includes(place.toLowerCase());
           const matchesPrice = pricePerPerson === '' || element.pricePerPerson <= parseFloat(pricePerPerson);

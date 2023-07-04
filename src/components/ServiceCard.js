@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-function ServiceCard({ speciality, place, picture, _id, owner, pricePerPerson, isAvailable}) {
+function ServiceCard({ speciality, place, picture, _id, owner, pricePerPerson, availability}) {
       
     return(     
         <div className="service-card-box">
@@ -20,6 +20,7 @@ function ServiceCard({ speciality, place, picture, _id, owner, pricePerPerson, i
                     </div>
                     <div>
                         <h4>Price : {pricePerPerson} €</h4>
+                        <h4>{availability}</h4>
                     </div>
                 </div>
                 </Link>         

@@ -12,6 +12,7 @@ function AddNewService(props) {
   const [place, setPlace] = useState("");
   const [description, setDescription] = useState("");
   const [pricePerPerson, setPricePerPerson] = useState("");
+  const [availability, setAvailability] = useState("");
 
   const uploadImage = (file) => {
     return axios
@@ -42,6 +43,7 @@ function AddNewService(props) {
       place,
       description,
       pricePerPerson,
+      availability
     };
 
     const storeToken = localStorage.getItem("authToken");
@@ -56,6 +58,7 @@ function AddNewService(props) {
         setPlace("");
         setDescription("");
         setPricePerPerson("");
+        setAvailability("");
 
         navigate("/services");
       })
@@ -124,6 +127,17 @@ function AddNewService(props) {
           placeholder="ex : 80$"
           onChange={(e) => {
             setPricePerPerson(e.target.value);
+          }}
+        />
+
+        <label>Availability</label>
+        <input 
+          type="text"
+          name="availability"
+          value={availability}
+          placeholder="Available / Unavailable"
+          onChange={e => {
+            setAvailability(e.target.value)
           }}
         />
         <button type="submit">Create</button>
