@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import { AuthContext } from "../context/auth.context";
 
 function ServiceCard({ speciality, place, picture, _id, owner, pricePerPerson}) {
-    const { isLoggedIn, user } = useContext(AuthContext);
+    const { isLoggedIn } = useContext(AuthContext);
     const [isAvailable, setIsAvailable] = useState();
 
     useEffect(() => {

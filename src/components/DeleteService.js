@@ -2,7 +2,7 @@ import axios from "axios"
 import { useNavigate } from "react-router-dom";
 
 function deleteService({ _id}){
-    const API_URL = "http://localhost:5005";
+    const API_URL = process.env.REACT_APP_SERVER_URL;
     
     const storeToken = localStorage.getItem('authToken');
 

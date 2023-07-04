@@ -2,7 +2,7 @@ import axios from "axios";
 import { useContext, useState } from "react";
 import { AuthContext } from "../context/auth.context";
 
-const API_URL = "http://localhost:5005";
+const API_URL = process.env.REACT_APP_SERVER_URL;
 
 function AddReview(props) {
   const { isLoggedIn, user } = useContext(AuthContext);
