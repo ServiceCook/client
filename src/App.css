@@ -371,6 +371,16 @@ nav .btn-logout {
   background-color: #f8bddf;
   color: black;
 }
+
+
+
+
+
+
+
+
+
+
 /* Reservation Page */
 .reservation-message {
   display: flex;
@@ -385,22 +395,40 @@ nav .btn-logout {
   margin-top: 30px;
 }
 
+
 .reservation-page {
   display: flex;
-  justify-content: center;
-  text-align: center;
+  align-items: center;
   flex-direction: column;
-  flex-wrap: wrap;
+  margin-bottom: 2em;
+  height: auto;
 }
 
 .form-reservation {
   display: flex;
   flex-direction: column;
-  width: 200px;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+  align-items: center;
   flex-wrap: wrap;
+  margin: 1.6em 0em;
+  height: auto;
+}
+
+.form-reservation input{
+  margin: 0.5em;
+  padding: 0.4em;
+}
+
+.form-reservation button{
+  border-radius: 2em;
+  border: 0.5px solid black;
+  padding:  0.75em 1em;
+  transition: 0.5s;
+  margin: 1.5em;
+}
+
+.form-reservation button:hover{
+  background-color: #f8bddf;
+
 }
 
 .reservation-list-page {
@@ -410,6 +438,21 @@ nav .btn-logout {
   align-items: center;
 }
 
+
+
+
+
+
+
+/*Confirmation Page */
+
+.confirmation-page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4.4em;
+  height: 56vh;
+}
 
 
 
@@ -443,6 +486,12 @@ nav .btn-logout {
   color: black;
 }
 
+
+
+
+
+
+
 /* Footer */
 .footer{
   background-color: #074220;
@@ -475,6 +524,12 @@ nav .btn-logout {
 .footer .lawerText{
   padding-bottom: 0.8em;
 }
+
+
+
+
+
+
 
 
 

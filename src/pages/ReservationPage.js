@@ -88,7 +88,7 @@ function ReservationPage(props){
             <div className="reservation-page">
                 <div>
                     <h1>Reservation</h1>
-                    <h2>Chef Cook : {fullName}</h2>
+                    <h2>{fullName}</h2>
                     <h3>Price per Person : {pricePerPerson}$</h3>
                 </div>
                 <form onSubmit={getReservation} className="form-reservation">
