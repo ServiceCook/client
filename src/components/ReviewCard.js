@@ -33,7 +33,7 @@ function ReviewCard({ description, reviewId, rating }) {
 
   return (
     <div>
-      <div>
+      <div className="card-review">
         <p>{description}</p>
         <div>{renderRatingStars()}</div>
 

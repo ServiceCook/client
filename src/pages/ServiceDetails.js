@@ -35,25 +35,36 @@ function ServiceDetails(props){
         return(<h1>Loading...</h1>)
     }else {      
     return (
+    <div>
         <div className="service-details">
-            <h2>{services.speciality}</h2>
-            {services.picture ? <img src={services.picture} alt="Service" className="image-details"/> : <p>No picture available</p>}
-            <h4>Description:
-                <p>{services.description}</p>
-            </h4>
-            <h3>Location: {services.place}</h3>
-            <h4>Price Per Person: {services.pricePerPerson} €</h4>
-            <h2>Service by {services.owner.name}</h2>
+            <div>
+                {services.picture ? <img src={services.picture} alt="Service" className="image-details"/> : <p>No picture available</p>}
+            </div>
+            
+            <div className="details-div">
+            
+                <h2>Service by : {services.owner.name}</h2>
 
+                <p>Description:
+                    <p>{services.description}</p>
+                </p>
+                <h4>Speciality : {services.speciality}</h4>
+                <h4>Location: {services.place}</h4>
+                <h4>Price Per Person: {services.pricePerPerson} €</h4>
+
+            </div>
+        </div>
+        <div className="review-details">
             <Link to={`/services/${serviceId}/reserve`}><button>Reserve</button></Link>
             <Link to="/services"><button>Back to the List</button></Link>
 
             <AddReview getService={getService} serviceId={serviceId} />
-
+            
             {services && services.reviews.map(review => (
                 <ReviewCard key={review} reviewId={review._id} description={review.description} {...review}/>
             ))}
         </div>
+    </div>
     )
     }
 } 
