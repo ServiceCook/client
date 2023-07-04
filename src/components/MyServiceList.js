@@ -1,9 +1,23 @@
 import { Link } from "react-router-dom";
 import IsPrivate from "../components/IsPrivate";
+import { useEffect, useState } from "react";
 
-function ServiceCard({ speciality, place, picture, _id, owner, pricePerPerson , deleteService}) {
+function MyServiceList({ speciality, place, picture, _id, owner, pricePerPerson , deleteService}) {
+    const[isAvailable, setIsAvailable] = useState();
+    
+    useEffect(() => {
+        const storedAvailableStatus = localStorage.getItem(`serviceAvailable_${_id}`)
+        if(storedAvailableStatus) {
+            setIsAvailable(storedAvailableStatus === 'true')
+        }
+    }, [_id])
 
-      
+    const toggleAvailability = () => {
+        const statusAvailable = !isAvailable;
+        setIsAvailable(statusAvailable);
+        localStorage.setItem(`serviceAvailable_${_id}`, statusAvailable.toString());
+    };
+
     return(
         <div className="service-card-box">
             <div className="description-service">
@@ -30,10 +44,15 @@ function ServiceCard({ speciality, place, picture, _id, owner, pricePerPerson , 
                       <button onClick={() => deleteService(_id)}>
                         Delete →</button>
                     </IsPrivate>
-                  </div>           
+                </div>           
+                <button
+                    className="available-status"
+                    onClick={toggleAvailability}
+                    style={{fontWeight: isAvailable ? 'bold' : 'normal', color: isAvailable ? 'red' : 'black'}}
+                >{isAvailable ? 'Available' : 'Unavailable'}</button>
             </div>
         </div>
     );
 }
 
-export default ServiceCard
+export default MyServiceList;

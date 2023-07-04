@@ -1,8 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import MyServiceCard from '../components/MyServiceList'
+// import MyServiceCard from '../components/MyServiceList'
 import { Link } from "react-router-dom";
-import IsPrivate from "../components/IsPrivate";
+import MyServiceList from "../components/MyServiceList";
+
 
 function MyServicePage(props) {
   const API_URL = process.env.REACT_APP_SERVER_URL
@@ -69,7 +70,7 @@ function MyServicePage(props) {
               return (
 
                 <div>
-                  <MyServiceCard key={service._id} {...service} deleteService={deleteService} />
+                  <MyServiceList key={service._id} {...service} deleteService={deleteService} />
                 </div>
               );
             })}
