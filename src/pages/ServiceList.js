@@ -5,7 +5,8 @@ import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 
 function ServiceList() {
-  const API_URL = "http://localhost:5005";
+  const API_URL = process.env.REACT_APP_SERVER_URL
+  
   const [services, setServices] = useState(undefined);
   const [place, setSearchPlace] = useState('');
   const [pricePerPerson, setSearchPricePerPerson] = useState('');

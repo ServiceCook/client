@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 function EditReservationPage(props) {
-  const API_URL = "http://localhost:5005";
-
+  const API_URL = process.env.REACT_APP_SERVER_URL
+  
   const { reservationId } = useParams();
   
   const navigate = useNavigate();
