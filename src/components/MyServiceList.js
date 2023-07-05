@@ -18,17 +18,20 @@ function MyServiceList({ speciality, place, picture, _id, owner, pricePerPerson,
                         <h4>{place}</h4>
                         <h4>Price : {pricePerPerson} €</h4>
                         <h4>{availability}</h4>
-                </div>
-                </Link>
-                </div>
-                <div className="Service-page-Btn">
-                    <Link to={`/services/edit/${_id}`}>
-                      <img className="edit-myService" src={editImg} alt="editImg"/>
+                    </div>
                     </Link>
-                    <IsPrivate>
-                        <img onClick={() => deleteService(_id)} src={deleteImg} alt="editImg" className="delete-myService"  />
-                    </IsPrivate>
-                </div>           
+                    <div className="Service-page-Btn">
+                        <Link to={`/services/edit/${_id}`}>
+                        <img className="edit-myService" src={editImg} alt="editImg" />
+                        </Link>
+                        <IsPrivate>
+                            <img onClick={() => deleteService(_id)} src={deleteImg} alt="editImg" className="delete-myService"  />
+                        </IsPrivate>
+                  
+                </div>
+
+        </div>
+          
             </>
     );
 }

@@ -11,7 +11,7 @@ function deleteService({ _id}){
         axios
           .delete(`${API_URL}/api/services/${_id}`, { headers: { Authorization: `Bearer ${storeToken}` } })
             .then(() => {
-              navigate("/services")
+              navigate("/myService")
             })
             .catch(e => console.log("error to delete", e));      
 }

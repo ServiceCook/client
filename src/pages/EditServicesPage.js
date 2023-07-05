@@ -52,7 +52,7 @@ function EditServicesPage(props) {
     axios
       .put(`${API_URL}/api/services/${serviceId}`, requestBodyService, { headers: { Authorization: `Bearer ${storeToken}` } })
       .then(response => {
-        navigate("/services");
+        navigate("/myService");
       })
       .catch(e => console.log("failed to edit the service", e));
   };
