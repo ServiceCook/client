@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import deleteImg from '../images/delete-icon.png'
+import editImg from '../images/edit-icon.png'
 
 
 function ReservationListPage() {
@@ -68,10 +70,12 @@ function ReservationListPage() {
             <p>Total Price: {element.totalPrice} €</p>
             <h3> Service By {element.fullName}</h3>
             <p>Date: {new Date(element.date).toLocaleDateString("en", { day: "2-digit", month: "long", year: "numeric" })}</p>
+            <div className="btn-reservationList">
             <Link to={`/reservations/edit/${element._id}`}>
-              <button>Edit</button>
+              <img className="edit-myReservation" src={editImg} alt="editImg"/>
             </Link>
-            <button onClick={() => deleteReservation(element._id)}>Delete</button>
+            <img onClick={() => deleteReservation(element._id)} src={deleteImg} alt="editImg" className="delete-myReservation"  />
+            </div>
           </div>
         ))
       )}

@@ -149,6 +149,8 @@ nav .btn-logout {
 }
 
 
+
+
 /*List of Service */
 
 .list-of-services {
@@ -187,9 +189,8 @@ nav .btn-logout {
   width: 100%;
   background-color: #EBEBEB;
   margin: 1em 0em;
-  padding-bottom:1em;
+  padding-bottom:2em;
 }
-
 
 
 .description-service p, 
@@ -379,7 +380,8 @@ nav .btn-logout {
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 2em;
+  padding-bottom: 2em;
+  background-color: #EBEBEB;
 }
 
 .signup-login {
@@ -396,6 +398,7 @@ nav .btn-logout {
   flex-wrap: wrap;
   margin: 1em;
   height: auto;
+
 }
 
 .LoginPage-Form{
@@ -439,6 +442,22 @@ nav .btn-logout {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #EBEBEB;
+  height: auto;
+}
+
+.reservation-list-page {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: #EBEBEB;
+  padding: 3em 0em 1em;
+}
+
+.reservation-list-page p{
+  margin: 0.2em;
 }
 
 .btn-reservation-list {
@@ -447,6 +466,12 @@ nav .btn-logout {
   justify-content: center;
   padding-top: 1.9em;
   background-color: #EBEBEB;
+}
+
+.delete-myReservation, .edit-myReservation{
+    width: 1em;
+    height: 1.2em;
+    margin: 1em 0.75em;
 }
 
 .reservation-page {
@@ -484,12 +509,7 @@ nav .btn-logout {
 
 }
 
-.reservation-list-page {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: center;
-}
+
 
 
 
