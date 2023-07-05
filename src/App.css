@@ -581,12 +581,7 @@ nav .btn-logout {
 
 /*List of Service */
 
-.list-of-services {
-  display: flex;
-  flex-wrap: wrap;
-  background-color: #EBEBEB;
-  padding: 1em 0em;
-}
+
 
 .container-filter-by-place {
   display: flex;
@@ -617,7 +612,12 @@ nav .btn-logout {
 
 
 
-
+.list-of-services {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #EBEBEB;
+  padding: 1em 0em;
+}
 
 .container-service-card-list {
   width: 25%;
@@ -682,10 +682,73 @@ nav .btn-logout {
 }
 
 
+/* My service */
+
+.list-of-myService{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #EBEBEB;
+  padding: 4em 0em;
+}
+
+.container-service-card-myList{
+  width: 25%;
+  background-color: #EBEBEB;
+  overflow: hidden;
+  position: relative;
+  height: 40vh;
+}
+
+.container-service-card-myList:hover .description-mylist{
+  opacity: 0.85;
+}
 
 
 
+.description-myService h1,
+.description-myService h4{
+  margin: 0em 1em;
+  text-decoration: none;
+  color: white;
+  -webkit-transition: all 300ms ease-out;
+  -moz-transition: all 300ms ease-out;
+  -o-transition: all 300ms ease-out;
+  -ms-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+  transform: translateY(30px);
+  -webkit-transform: translateY(30px);
+}
 
+
+.description-myService h1{
+  font-size: 1.4em;
+  text-align: start;
+  margin: 0.2em 0em 0.2em 0.65em;
+} 
+
+.description-myService h4{
+  font-weight: 400;
+}
+
+.img-service-myList img{
+  width: 100%;
+  height: 40vh;
+}
+
+.description-mylist{
+  background-color: #074220;
+  position: absolute;
+  text-align: start;
+  -webkit-transition: all 300ms ease-out;
+  -moz-transition: all 300ms ease-out;
+  -o-transition: all 300ms ease-out;
+  -ms-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+  opacity: 0;
+  width: 100%;
+  height: 50%;
+  top: 50%;
+}
 
 
 @media (max-width: 800px) {

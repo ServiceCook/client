@@ -64,11 +64,11 @@ function MyServicePage(props) {
         ) : (
           <>
           <h1 className="my-own-service">My Own Service</h1>
-          <div className="list-of-services">
+          <div className="list-of-myService">
             {myServices.map((service) => {
               return (
 
-                <div className="container-service-card-list">
+                <div className="container-service-card-myList">
                   <MyServiceList key={service._id} {...service} deleteService={deleteService} />
                 </div>
               );
