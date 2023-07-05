@@ -31,7 +31,6 @@ function AuthProviderWrapper(props) {
       .then((response) => {
         // If the server verifies that the JWT token is valid  
         const user = response.data;
-        console.log(response.data, "tell me this is data on line 33");
        // Update state variables        
         setIsLoggedIn(true);
         setIsLoading(false);

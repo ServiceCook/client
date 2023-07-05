@@ -7,7 +7,7 @@ import editImg from "../images/edit-icon.png"
 
 const API_URL = process.env.REACT_APP_SERVER_URL;
 
-function ReviewCard({ description, reviewId, rating }) {
+function ReviewCard({ description, reviewId, rating, owner, name, picture }) {
   const { isLoggedIn, user } = useContext(AuthContext);
 
   const navigate = useNavigate();
@@ -38,6 +38,8 @@ function ReviewCard({ description, reviewId, rating }) {
       <div className="card-review">
       
         <div className="star-render">{renderRatingStars()}</div>
+        <p>{name}</p>
+        <img src={picture} alt="img"/>
         <p>{description}</p>
 
         {isLoggedIn && user ? (
