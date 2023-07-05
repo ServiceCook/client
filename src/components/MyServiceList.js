@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import IsPrivate from "../components/IsPrivate";
-import { useEffect, useState } from "react";
 import deleteImg from '../images/delete-icon.png'
 import editImg from '../images/edit-icon.png'
 
@@ -8,10 +7,9 @@ import editImg from '../images/edit-icon.png'
 function MyServiceList({ speciality, place, picture, _id, owner, pricePerPerson, availability, deleteService}) {
 
     return(
-        <div className="service-card-box">
             <div className="description-service">
             <Link to={{ pathname: `/services/${_id}`, state: { picture } }}>
-                <div>
+                <div className="img-service-list">
                     {picture ? <img src={picture} alt="img"/> : <p>sorry, no picture</p>}
                 </div>
                 <div className="description-list">
@@ -35,7 +33,6 @@ function MyServiceList({ speciality, place, picture, _id, owner, pricePerPerson,
                     </IsPrivate>
                 </div>           
             </div>
-        </div>
     );
 }
 

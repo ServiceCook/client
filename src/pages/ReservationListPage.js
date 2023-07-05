@@ -52,7 +52,7 @@ function ReservationListPage() {
           <button>Your Own Service</button>
         </Link>
       </div>
-
+      <div className="allMyReservation">
       {reservations.length === 0 
       ? (
         <div className="reservation-message">
@@ -64,6 +64,7 @@ function ReservationListPage() {
         </div>
       ) : (
         reservations.map((element) => (
+        
           <div key={element._id} className="reservation-list-page">
             <p>Total Person: {element.totalPerson}</p>
             <p>Price Per Person: {element.pricePerPerson} €</p>
@@ -78,7 +79,9 @@ function ReservationListPage() {
             </div>
           </div>
         ))
+        
       )}
+      </div>
     </div>
   );
 }
