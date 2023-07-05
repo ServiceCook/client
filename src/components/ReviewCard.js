@@ -99,10 +99,11 @@ function ReviewCard({ description, reviewId, rating, owner, name, picture, servi
   return (
     <div>
       <div className="card-review">
+        <div className="picture-name-container">
+          <img src={picture} alt="img" className="review-picture"/>
+          <p>{name}</p>
+        </div>
         <div className="star-render">{renderRatingStars()}</div>
-        <p>{owner}</p>
-        <p>{name}</p>
-        <img src={picture} alt="img"/>
         <p>{description}</p>
 
         {isOwner && (

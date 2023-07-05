@@ -234,6 +234,7 @@ nav .btn-logout {
   margin: 2em;
   background-color: #EBEBEB;
   width: 25em;
+  border-radius: 10px;
 }
 
 .star-render{
@@ -246,6 +247,20 @@ nav .btn-logout {
   margin: 0em;
 }
 
+.picture-name-container {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+}
+
+.review-picture {
+  width: 50px;
+  height: 40px;
+  border-radius: 50%;
+  margin-left: 1em;
+  margin-top: 0.5em;
+}
 
 .deleteIcon, .editIcon{
   width: 1em;
@@ -274,6 +289,10 @@ nav .btn-logout {
   color: gold;
 }
 
+.reviews-title {
+  margin: 0;
+  padding: 0;
+}
 
 
 
@@ -769,4 +788,6 @@ nav .btn-logout {
     border: 2px solid #f8bddf;
   }
 }
+
+
 

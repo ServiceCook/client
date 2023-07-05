@@ -54,8 +54,10 @@ function ServiceDetails(props){
             </div>
         </div>
         <div className="review-details">
-            <Link to={`/services/${serviceId}/reserve`}><button>Reserve</button></Link>
-            <Link to="/services"><button>Back to the List</button></Link>
+            <div>
+                <Link to={`/services/${serviceId}/reserve`}><button>Reserve</button></Link>
+                <Link to="/services"><button>Back to the List</button></Link>
+            </div>
 
             <AddReview getService={getService} serviceId={serviceId} />
             <div className="all-review">

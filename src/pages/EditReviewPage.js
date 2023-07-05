@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 const API_URL = process.env.REACT_APP_SERVER_URL
 
@@ -33,6 +33,7 @@ const[description, setDescription] = useState("");
       .put(`${API_URL}/api/reviews/${reviewId}`, requestBodyReview, { headers: { Authorization: `Bearer ${storedToken}` } })
       .then(response => {
         // navigate(`/reviews/${reviewId}`);
+        alert("You have successfully updated.")
       })
       .catch(err => {
         console.log("failed to update the review", err);

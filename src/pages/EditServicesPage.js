@@ -91,14 +91,6 @@ function EditServicesPage(props) {
           onChange={e => { setDescription(e.target.value) }}
         />
 
-        <label>Amount Of People</label>
-        <input
-          type="number"
-          name="amountOfPeople"
-          value={amountOfPeople}
-          onChange={e => { setAmountOfPeople(e.target.value) }}
-        />
-
         <label>Price Per Person</label>
         <input
           type="number"

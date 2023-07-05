@@ -56,7 +56,7 @@ function AddReview(props) {
   };
 
   return (
-    <div>
+    <div className="add-review-div">
       {isLoggedIn && user ? (
         <div>
           <button onClick={toggleFormVisibility}>Give your review</button>
@@ -85,7 +85,7 @@ function AddReview(props) {
         <></>
       )}
 
-      <h4>Reviews:</h4>
+      <h4 className="reviews-title">Reviews:</h4>
     </div>
   );
 }
