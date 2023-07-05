@@ -624,7 +624,7 @@ nav .btn-logout {
   background-color: #EBEBEB;
   overflow: hidden;
   position: relative;
-  height: 50vh;
+  height: 40vh;
 }
 
 
@@ -653,11 +653,11 @@ nav .btn-logout {
 }
 .img-service-list img{
   width: 100%;
-  height: 60vh;
+  height: 40vh;
 }
 
 .container-service-card-list:hover .description-list{
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 .description-list{
@@ -671,8 +671,8 @@ nav .btn-logout {
   transition: all 300ms ease-out;
   opacity: 0;
   width: 100%;
-  height: 60%;
-  top: 60%;
+  height: 50%;
+  top: 50%;
 }
 
 
