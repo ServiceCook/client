@@ -36,8 +36,9 @@ function ReviewCard({ description, reviewId, rating }) {
   return (
     <div>
       <div className="card-review">
+      
+        <div className="star-render">{renderRatingStars()}</div>
         <p>{description}</p>
-        <div>{renderRatingStars()}</div>
 
         {isLoggedIn && user ? (
           <div>

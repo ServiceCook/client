@@ -145,6 +145,7 @@ nav .btn-logout {
   flex-wrap: wrap;
   text-align: center;
   height: 58vh;
+  background-color: #EBEBEB;
 }
 
 
@@ -332,10 +333,15 @@ nav .btn-logout {
   width: 25em;
 }
 
-.card-review p{
-  margin: 1em 1em;
+.star-render{
+  padding: 0.5em 1em 0em;
+  margin: 0em;
 }
 
+.card-review p{
+  padding: 0.3em 1em 0em;
+  margin: 0em;
+}
 
 
 .deleteIcon, .editIcon{
@@ -361,6 +367,9 @@ nav .btn-logout {
   margin: 1em;
 }
 
+.gold-star {
+  color: gold;
+}
 
 
 
@@ -436,7 +445,8 @@ nav .btn-logout {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-top: 30px;
+  padding-top: 1.9em;
+  background-color: #EBEBEB;
 }
 
 .reservation-page {
@@ -483,7 +493,19 @@ nav .btn-logout {
 
 
 
+.edit-reservation-form{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  background-color: #EBEBEB;
+  height: auto;
+  padding: 8.8em 0em;
 
+}
+
+.edit-reservation-form input{
+  margin: 0.5em 0em;
+}
 
 
 
@@ -505,8 +527,9 @@ nav .btn-logout {
   flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
-  margin-top: 50px;
-  height: 70vh;
+  padding: 3em 0em;
+  height: auto;
+  background-color: #EBEBEB;
 }
 .add-new-service input, .add-new-service textarea:hover , 
 .edit-service-page input, .edit-service-page textarea{
@@ -617,9 +640,7 @@ nav .btn-logout {
   background-color: #0e6f37;
 }
 
-.gold-star {
-  color: gold;
-}
+
 
 .profile-picture {
   width: 100px;
