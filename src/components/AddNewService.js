@@ -131,15 +131,15 @@ function AddNewService(props) {
         />
 
         <label>Availability</label>
-        <input 
-          type="text"
+        <select
           name="availability"
           value={availability}
-          placeholder="Available / Unavailable"
-          onChange={e => {
-            setAvailability(e.target.value)
-          }}
-        />
+          onChange={(e) => setAvailability(e.target.value)}
+        >
+          <option value="">-- Select Availability --</option>
+          <option value="Available">Available</option>
+          <option value="Unavailable">Unavailable</option>
+        </select>
         <button type="submit">Create</button>
       </form>
     </div>

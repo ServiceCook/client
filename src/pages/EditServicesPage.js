@@ -107,12 +107,17 @@ function EditServicesPage(props) {
           onChange={e => { setPricePerPerson(e.target.value) }}
         />
 
-        <input 
-          type="text"
+     
+        <label>Availability</label>
+        <select
           name="availability"
           value={availability}
-          onChange={e => { setAvailability(e.target.value)}}
-        />
+          onChange={(e) => setAvailability(e.target.value)}
+        >
+          <option value="">-- Select Availability --</option>
+          <option value="Available">Available</option>
+          <option value="Unavailable">Unavailable</option>
+        </select>
         <button type="submit">Update</button>
       </form>
     </div>
