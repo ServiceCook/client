@@ -60,7 +60,7 @@ function ServiceDetails(props){
             <AddReview getService={getService} serviceId={serviceId} />
             <div className="all-review">
             {services && services.reviews.map(review => (
-                <ReviewCard key={review} reviewId={review._id} description={review.description} ownderId={review.owner} name={review.name} picture={review.picture} {...review}/>
+                <ReviewCard key={review} serviceId={serviceId} reviewId={review._id} description={review.description} ownderId={review.owner} name={review.name} picture={review.picture} {...review}/>
             ))}
             </div>
         </div>

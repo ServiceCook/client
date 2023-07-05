@@ -69,9 +69,8 @@ import editImg from "../images/edit-icon.png"
 
 const API_URL = process.env.REACT_APP_SERVER_URL;
 
-function ReviewCard({ description, reviewId, rating, owner, name, picture }) {
+function ReviewCard({ description, reviewId, rating, owner, name, picture, serviceId }) {
   const { isLoggedIn, user } = useContext(AuthContext);
-
   const navigate = useNavigate();
   const storedToken = localStorage.getItem("authToken");
 
