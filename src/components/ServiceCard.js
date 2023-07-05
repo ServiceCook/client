@@ -2,9 +2,7 @@ import { Link } from "react-router-dom"
 
 function ServiceCard({ speciality, place, picture, _id, owner, pricePerPerson, availability}) {
       
-    return(     
-        <div className="service-card-box">
-            
+    return(                 
             <div className="description-service">
             <Link to={{ pathname: `/services/${_id}`, state: { picture } }}>
 
@@ -19,14 +17,13 @@ function ServiceCard({ speciality, place, picture, _id, owner, pricePerPerson, a
                         <p>{place}</p>
                     </div>
                     <div>
-                        <h4>Price : {pricePerPerson} €</h4>
+                        <h4>{pricePerPerson} € / Person</h4>
                         <h4>{availability}</h4>
                     </div>
                 </div>
                 </Link>         
             </div>
-        </div>
-    );
+        );
 }
 
 export default ServiceCard;

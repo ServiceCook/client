@@ -157,6 +157,7 @@ nav .btn-logout {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  background-color: #EBEBEB;
 }
 
 .container-filter-by-place {
@@ -164,8 +165,8 @@ nav .btn-logout {
   flex-direction: row;
   align-items: start;
   flex-wrap: wrap;
-  margin: 2em 0em 2em 2.5em;
-
+  padding: 2em 0em 2em 2.5em;
+  background-color: #EBEBEB;
 }
 
 .filter-input {
@@ -185,11 +186,12 @@ nav .btn-logout {
   border: 1px solid #f8bddf;
 }
 
-.service-card-box {
-  width: 100%;
+.container-service-card-list {
+  width: 20%;
   background-color: #EBEBEB;
-  margin: 1em 0em;
+  margin: 2em 2em 4em;
   padding-bottom:2em;
+  border: 1px solid gray;
 }
 
 
@@ -197,35 +199,32 @@ nav .btn-logout {
 .description-service h3,
 .description-service h1,
 .description-service h4{
-  margin: 0em;
+  margin: 0.5em;
   text-decoration: none;
   color: black;
 }
 
+.description-service{
+  text-align: center;
+}
+.description-service a{
+  padding: 0em;
+}
 .description-service h1{
   font-size: 1.6em;
   text-align: center;
   margin: 0.5em;
 }
 
-.description-service img {
-  width: 15em;
-  height: 10em;
+.img-service-list img{
+  width: 100%;
+  height: 12em;
+  padding: 0em;
 }
 
-.description-service h4{
-  float: right;
-  margin: 0em 2em;
-}
  
 .description-list-spe{
   margin: 0em 1em;
-}
-
-.container-service-card-list {
-  margin-bottom: 2em;
-  margin-left: 2em;
-  margin-right: 2em;
 }
 
 .available-status {
@@ -259,19 +258,19 @@ nav .btn-logout {
 
 /* For profil Service */
 
+
 .my-own-service{
   text-align: center;
-}
-
-.my-service-card{
   background-color: #EBEBEB;
+  margin: 0;
+  padding: 1em;
 }
 
 .Service-page-Btn{
   display: flex;
   flex-direction: row;
   justify-content: center;
-
+  
 }
 
 
@@ -440,20 +439,28 @@ nav .btn-logout {
 /* Reservation Page */
 .reservation-message {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   background-color: #EBEBEB;
   height: auto;
 }
 
+
+.allMyReservation{
+  display: flex;
+  flex-flow: row wrap;
+  background-color: #EBEBEB;
+}
 .reservation-list-page {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
-
+  width: 20%;
+  margin: 3em 2em;
   background-color: #EBEBEB;
-  padding: 3em 0em 1em;
+  padding: 1.5em 0em 1em;
+  border: 1px solid grey;
 }
 
 .reservation-list-page p{

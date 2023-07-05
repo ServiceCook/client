@@ -68,7 +68,7 @@ function MyServicePage(props) {
             {myServices.map((service) => {
               return (
 
-                <div>
+                <div className="container-service-card-list">
                   <MyServiceList key={service._id} {...service} deleteService={deleteService} />
                 </div>
               );
