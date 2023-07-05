@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import descriptionImg from '../images/Homepage.png'
-// import coverImg from '../images/homepageDescription.jpg'
-import pasta from '../images/Pasta.jpg'
+import pasta from '../images/Pasta-copy.jpg'
+import logo from '../images/logo.svg'
 
 function HomePage() {
     return (
@@ -9,7 +9,7 @@ function HomePage() {
         <div className='coverHomepage'>
           <img src={pasta} alt="HomePage"/>
         <div>
-            <h1>Chef on the way</h1>
+            <img className='logo-home' src={logo} alt='logo-homepage'/>
         </div>
         </div>
 
