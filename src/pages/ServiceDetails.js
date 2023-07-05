@@ -59,10 +59,11 @@ function ServiceDetails(props){
             <Link to="/services"><button>Back to the List</button></Link>
 
             <AddReview getService={getService} serviceId={serviceId} />
-            
+            <div className="all-review">
             {services && services.reviews.map(review => (
                 <ReviewCard key={review} reviewId={review._id} description={review.description} {...review}/>
             ))}
+            </div>
         </div>
     </div>
     )

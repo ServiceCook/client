@@ -269,18 +269,18 @@ nav .btn-logout {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: 1em;
+
 }
 
-.Service-page-Btn button{
-  border: none;
-  color: black;
+
+
+.edit-myService, .delete-myService{
+  max-width: 1em;
+  max-height: 1em;
+  margin: 2em 0.5em 0em;
+  cursor: pointer;
 }
 
-.Service-page-Btn button:hover{
-  color: #074220;
-  text-decoration: underline;
-}
 
 
 /*Service details Page */
@@ -317,16 +317,49 @@ nav .btn-logout {
 
 .review-details{
   display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
 
 }
 
 .card-review{
   display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  margin: 2em;
+  background-color: #EBEBEB;
+  width: 25em;
+}
+
+.card-review p{
+  margin: 1em 1em;
 }
 
 
 
+.deleteIcon, .editIcon{
+  width: 1em;
+  height: 1em;
+  margin: 0.5em;
+  float: right;
+  cursor: pointer;
+}
 
+.edit-review-div{
+  background-color: #EBEBEB;
+}
+.edit-review{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  height: auto;
+  padding: 11.9em 0em;
+}
+
+.edit-review input{
+  margin: 1em;
+}
 
 
 
@@ -405,7 +438,6 @@ nav .btn-logout {
   justify-content: center;
   margin-top: 30px;
 }
-
 
 .reservation-page {
   display: flex;

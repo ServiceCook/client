@@ -40,8 +40,8 @@ const[description, setDescription] = useState("");
   };
 
   return(
-    <div>
-      <form onClick={handleFormSubmitReview}>
+    <div className="edit-review-div">
+      <form onClick={handleFormSubmitReview} className="edit-review">
         <label>Description</label>
         <input 
           type="text"

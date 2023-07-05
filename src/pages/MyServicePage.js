@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import MyServiceList from "../components/MyServiceList";
 
-
 function MyServicePage(props) {
   const API_URL = process.env.REACT_APP_SERVER_URL
   
