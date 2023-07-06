@@ -44,7 +44,7 @@ function ServiceDetails(props){
             </div>
             
             <div className="details-div">
-            
+
                 <h2>Service by : {services.owner.name}</h2>
 
                 <p>Description:
@@ -58,7 +58,9 @@ function ServiceDetails(props){
         </div>
         <div className="review-details">
             <div>
-                <Link to={`/services/${serviceId}/reserve`}><button>Reserve</button></Link>
+                <Link to={`/services/${serviceId}/reserve`}>
+                    {(user && user._id === services.owner._id) ? <></> : <button>Reserve</button>}
+                </Link>
                 <Link to="/services"><button>Back to the List</button></Link>
             </div>
 
