@@ -14,7 +14,7 @@ function ServiceCard({ speciality, place, picture, _id, owner, pricePerPerson, a
                     <h1>{owner.name} | {speciality}</h1>
                         <h4>{place}</h4>
                         <h4>{pricePerPerson} € / Person</h4>
-                        <h4>{availability}</h4>
+                        {/* <h4>{availability}</h4> */}
                 </div>
                  
                 </div>

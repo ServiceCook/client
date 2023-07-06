@@ -169,6 +169,7 @@ nav .btn-logout {
   flex-direction: row;
   align-items: center;
   flex-wrap: wrap;
+  background-color: #EBEBEB;
 }
 
 .details-div {
@@ -199,7 +200,7 @@ nav .btn-logout {
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
-
+  background-color: #EBEBEB;
 }
 
 .card-review{
@@ -382,8 +383,9 @@ nav .btn-logout {
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 2em;
+  padding-bottom: 2em;
   height: auto;
+  background-color: #EBEBEB;
 }
 
 .form-reservation {
@@ -439,8 +441,9 @@ nav .btn-logout {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 4.4em;
+  padding-top: 9.8vh;
   height: 56vh;
+  background-color: #EBEBEB;
 }
 
 
@@ -455,9 +458,10 @@ nav .btn-logout {
   height: auto;
   background-color: #EBEBEB;
 }
-.add-new-service input, .add-new-service textarea:hover , 
-.edit-service-page input, .edit-service-page textarea{
-  margin: 1em 0em 0.5em;
+.add-new-service input, .add-new-service textarea, 
+.edit-service-page input, .edit-service-page textarea,
+.edit-service-page select, .add-new-service select{
+  margin: 1em 0em 1em;
   padding: 0.5em;
 }
 
@@ -610,7 +614,7 @@ nav .btn-logout {
   display: flex;
   flex-wrap: wrap;
   background-color: #EBEBEB;
-  padding: 1em 0em;
+  padding: 2em 0em;
 }
 
 .container-service-card-list {
@@ -621,6 +625,11 @@ nav .btn-logout {
   height: 40vh;
 }
 
+
+.description-service a{
+  padding: 0;
+  margin: 0em;
+}
 
 .description-list h1,
 .description-list h4{
@@ -685,7 +694,7 @@ nav .btn-logout {
   text-align: center;
   background-color: #EBEBEB;
   margin: 0;
-  padding: 1em;
+  padding: 0.5em;
 }
 
 .Service-page-Btn{
@@ -715,7 +724,7 @@ nav .btn-logout {
   display: flex;
   flex-wrap: wrap;
   background-color: #EBEBEB;
-  padding: 4em 0em;
+  padding: 0em 0em 3.5em;
 }
 
 .container-service-card-myList{

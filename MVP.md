@@ -264,9 +264,47 @@ Add price to Service List ✅
 
 Add all information inside Details List ✅
 
-Find idea for the HomePage
+Find idea for the HomePage✅
 
 Reservation =   Add Delete Button / Complete Button / (When you click on the ID you can see the Information of de reservation) ✅
 
-Secure the Road - If you are the creator of your the service, you can't reserve it
+Secure the Road - If you are the creator of your the service, you can't reserve it✅
 
+
+
+
+
+Ok i just create a little List for tomorrow
+
+
+
+Check : 
+- Delete/edit function for Review / Service / Reservation ✅
+
+- All the road without login and check the security to send no connected people to login 
+
+- try security for Owner service/ review and reservation 
+
+- Check if contact Us work ✅
+
+- Available lock the service and can't see details if we pass in Unavailable 
+
+
+Need to do:
+
+- Design of Details page 
+
+- Add same Background color for all pages ✅
+
+- Burger Menu
+
+- Navigate with details page when we Delete or Edit to the same details page 
+
+- (Transition Page)
+
+- Add address to the reservation List ✅
+
+- Filter decroissant for the list of project
+
+
+ 
