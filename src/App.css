@@ -171,7 +171,7 @@ nav .btn-logout {
 }
 
 .details-div {
-  margin: 2em 2em 2em;
+  margin: 1.5em 1.5em 1.5em;
   width: 50vw;
 }
 .details-div h2{
@@ -186,7 +186,7 @@ nav .btn-logout {
 
 .image-details{
   width: 50vw;
-  height: 73.5vh;
+  height: 71.5vh;
   display: flex;
   flex-wrap: wrap;
 }
@@ -323,7 +323,7 @@ nav .btn-logout {
   align-items: center;
   flex-wrap: wrap;
   margin-top: 50px;
-  height: 37.7vh;
+  height: 37.6vh;
 }
 
 .SignupPage-Form input, .LoginPage-Form input{
