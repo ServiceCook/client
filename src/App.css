@@ -168,6 +168,7 @@ nav .btn-logout {
   display: flex;
   flex-direction: row;
   background-color: #EBEBEB;
+  overflow: hidden;
 }
 
 .details-div {
