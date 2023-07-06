@@ -42,34 +42,41 @@ function ServiceDetails(props){
             <div>
                 {services.picture ? <img src={services.picture} alt="Service" className="image-details"/> : <p>No picture available</p>}
             </div>
-            
+
+
+
+
+
+
             <div className="details-div">
 
                 <h2>Service by : {services.owner.name}</h2>
 
-                <p>Description:
-                    <p>{services.description}</p>
-                </p>
+                <p>Description : {services.description}</p>
                 <h4>Speciality : {services.speciality}</h4>
-                <h4>Location: {services.place}</h4>
-                <h4>Price Per Person: {services.pricePerPerson} €</h4>
+                <h4>Location : {services.place}</h4>
+                <h4>Price Per Person : {services.pricePerPerson} €</h4>
+ 
+ 
+                <div className="review-details">
+                    <div className="btn-details">
+                        <Link to={`/services/${serviceId}/reserve`}>
+                            {(user && user._id === services.owner._id) ? <></> : <button>Reserve</button>}
+                        </Link>
+                        <Link to="/services"><button>Back to the List</button></Link>
 
-            </div>
-        </div>
-        <div className="review-details">
-            <div>
-                <Link to={`/services/${serviceId}/reserve`}>
-                    {(user && user._id === services.owner._id) ? <></> : <button>Reserve</button>}
-                </Link>
-                <Link to="/services"><button>Back to the List</button></Link>
-            </div>
+                        {(user && user._id === services.owner._id) ? <></> : 
+                        <AddReview getService={getService} serviceId={serviceId} />}
 
-            {(user && user._id === services.owner._id) ? <></> : 
-            <AddReview getService={getService} serviceId={serviceId} />}
-            <div className="all-review">
-            {services && services.reviews.map(review => (
-                <ReviewCard key={review} serviceId={serviceId} reviewId={review._id} description={review.description} ownderId={review.owner} name={review.name} picture={review.picture} {...review}/>
-            ))}
+                    </div>
+
+                    <div className="all-review">
+                    <h4 className="reviews-title">Reviews:</h4>
+                        {services && services.reviews.map(review => (
+                            <ReviewCard key={review} serviceId={serviceId} reviewId={review._id} description={review.description} ownderId={review.owner} name={review.name} picture={review.picture} {...review}/>
+                        ))}
+                    </div>
+                </div>
             </div>
         </div>
     </div>

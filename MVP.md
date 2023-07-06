@@ -281,13 +281,13 @@ Ok i just create a little List for tomorrow
 Check : 
 - Delete/edit function for Review / Service / Reservation ✅
 
-- All the road without login and check the security to send no connected people to login 
+- All the road without login and check the security to send no connected people to login ✅
 
-- try security for Owner service/ review and reservation 
+- try security for Owner service/ review and reservation ✅
 
 - Check if contact Us work ✅
 
-- Available lock the service and can't see details if we pass in Unavailable 
+-( Available lock the service and can't see details if we pass in Unavailable )
 
 
 Need to do:
@@ -296,15 +296,15 @@ Need to do:
 
 - Add same Background color for all pages ✅
 
-- Burger Menu
+- (Burger Menu)
 
-- Navigate with details page when we Delete or Edit to the same details page 
+- Navigate with details page when we Delete or Edit to the same details page ✅
 
 - (Transition Page)
 
 - Add address to the reservation List ✅
 
-- Filter decroissant for the list of project
+- ((Filter decroissant for the list of project))
 
-
+- Mobile design = 🍾
  

@@ -167,32 +167,38 @@ nav .btn-logout {
 .service-details {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  flex-wrap: wrap;
   background-color: #EBEBEB;
 }
 
 .details-div {
-  margin: 0.3em;
-  padding: 0;
+  margin: 4em;
+  width: 50vw;
 }
+.details-div h2{
+  margin: 0em;
+}
+
 
 .details-div h4{
   font-size: 1em;
   font-weight: 600;
 }
 
-.image-details {
-  width: 30em;
-  height: auto;
-  max-height: 400px;
+.image-details{
+  width: 50vw;
+  height: 70vh;
   display: flex;
   flex-wrap: wrap;
-  margin: 5em 8em 5em 10em;
 }
 
-.image-details:hover {
-  transition: 0.5 ease-in-out;
+.all-review h4{
+  text-align: center;
+  margin: 0.5em;
+}
+
+.all-review{
+  overflow-y: scroll;
+  height: 15em;
 }
 
 .review-details{
@@ -203,6 +209,9 @@ nav .btn-logout {
   background-color: #EBEBEB;
 }
 
+.btn-details{
+  display: flex;
+}
 .card-review{
   display: flex;
   flex-direction: column;
@@ -265,10 +274,8 @@ nav .btn-logout {
   color: gold;
 }
 
-.reviews-title {
-  margin: 0;
-  padding: 0;
-}
+
+
 
 
 
@@ -586,10 +593,18 @@ nav .btn-logout {
   flex-direction: row;
   align-items: start;
   flex-wrap: wrap;
-  padding: 2em 0em 2em 2.5em;
+  padding: 2em 0em 1em 2.5em;
   background-color: #EBEBEB;
 }
 
+.title-list h1{
+  text-align: center;
+  color: #074220;
+  font-size: 1.6em;
+  background-color: #EBEBEB;
+  padding-bottom: 0.5em;
+  margin: 0;
+}
 .filter-input {
   display: flex;
   flex-direction: row;
@@ -739,7 +754,10 @@ nav .btn-logout {
   opacity: 0.85;
 }
 
-
+.description-myService a{
+  padding: 0em;
+  margin: 0em;
+}
 
 .description-myService h1,
 .description-myService h4{

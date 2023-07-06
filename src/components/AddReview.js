@@ -84,8 +84,6 @@ function AddReview(props) {
       ) : (
         <></>
       )}
-
-      <h4 className="reviews-title">Reviews:</h4>
     </div>
   );
 }

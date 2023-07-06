@@ -39,6 +39,7 @@ function ServiceList() {
   } else {
     return (
       <div>
+
         <div className="container-filter-by-place">
           <input
             type="text"
@@ -53,9 +54,13 @@ function ServiceList() {
             value={pricePerPerson}
             onChange={(e) => setSearchPricePerPerson(e.target.value)}
             className="filter-input"
-            placeholder="Filter by Price"
+            placeholder="Filter by Max Price"
           />
+                  
+          
+        
         </div>
+        <div className="title-list"><h1>Choose your fighter</h1></div>
         <div className="list-of-services">
           {services.length === 0 ? (
             <p>No services found.</p>
