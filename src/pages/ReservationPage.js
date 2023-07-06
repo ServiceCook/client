@@ -12,7 +12,8 @@ function ReservationPage(props){
     const [totalPerson, setTotalPerson] = useState("");
     const [pricePerPerson, setPricePerPerson] = useState("");
     const [totalPrice, setTotalPrice] = useState("");
-    const [date, setDate] = useState("")
+    const [date, setDate] = useState("");
+    const [hour, setHour] = useState("");
 
     const API_URL = process.env.REACT_APP_SERVER_URL
         
@@ -34,13 +35,7 @@ function ReservationPage(props){
                 .catch((e) => console.log(e))
     }
 
-    const sendNotification = () => {
-        // We will Modify this function to send a notification to the owner
-        // using your backend API or any other notification mechanism.
-        console.log("Sending notification to the owner...");
-    };
-
-    const getReservation = (e) => {
+      const getReservation = (e) => {
 
         e.preventDefault();
 
@@ -52,6 +47,7 @@ function ReservationPage(props){
             totalPrice: (totalPerson * pricePerPerson),
             date,
             fullName,
+            hour
           };
 
         const storedToken = localStorage.getItem("authToken");
@@ -65,8 +61,7 @@ function ReservationPage(props){
                     setTotalPerson("");
                     setTotalPrice("");
                     setDate("");
-
-                    sendNotification();
+                    setHour("")
 
                     navigate('/confirmation')
                 })
@@ -92,7 +87,7 @@ function ReservationPage(props){
                     <h3>Price per Person : {pricePerPerson}$</h3>
                 </div>
                 <form onSubmit={getReservation} className="form-reservation">
-                    <label>Total Person</label>
+                    <label>Total Persons</label>
                     <input 
                         type="number"
                         name="totalPerson"
@@ -106,6 +101,15 @@ function ReservationPage(props){
                         name="date"
                         value={date}
                         onChange={(e) => {setDate(e.target.value)}}
+                    />
+                    <label>Hour</label>
+                    <input 
+                        type="text"
+                        name="hour"
+                        value={hour}
+                        step="0.01"
+                        placeholder="ex. 10:30"
+                        onChange={(e) => {setHour(e.target.value)}}
                     />
                     <button type="submit" >Reserve</button>
                 </form>
