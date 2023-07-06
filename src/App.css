@@ -83,7 +83,7 @@ nav .btn-logout {
   width: 30%;
   height: auto;
   top: 30%;
-  left: 35%;
+  left: 37%;
   opacity: 1;
 }
 .coverHomepage h1 {
@@ -614,7 +614,7 @@ nav .btn-logout {
   display: flex;
   flex-wrap: wrap;
   background-color: #EBEBEB;
-  padding: 2em 0em;
+
 }
 
 .container-service-card-list {
