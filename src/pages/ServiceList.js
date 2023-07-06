@@ -11,8 +11,10 @@ function ServiceList() {
   const [place, setSearchPlace] = useState('');
   const [pricePerPerson, setSearchPricePerPerson] = useState('');
 
-  const { isLoggedIn } = useContext(AuthContext);
+  const { isLoggedIn, user } = useContext(AuthContext);
   const storeToken = localStorage.getItem('authToken');
+
+  console.log(user);
 
   const getAllService = () => {
     axios
