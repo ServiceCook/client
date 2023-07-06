@@ -292,7 +292,7 @@ Check :
 
 Need to do:
 
-- Design of Details page 
+- Design of Details page ✅
 
 - Add same Background color for all pages ✅
 

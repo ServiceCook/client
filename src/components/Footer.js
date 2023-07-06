@@ -11,7 +11,6 @@ return(
         <hr/>
         <div className="lawerText">
             <p>© 2023 Chef On The Way Enterprise, Inc</p>
-            <p>Securities offered through Principal Securities, Inc</p>
         </div>
     </div>
 )

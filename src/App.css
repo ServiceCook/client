@@ -149,7 +149,7 @@ nav .btn-logout {
   justify-content: center;
   flex-wrap: wrap;
   text-align: center;
-  height: 58vh;
+  height: 63.8vh;
   background-color: #EBEBEB;
 }
 
@@ -171,7 +171,7 @@ nav .btn-logout {
 }
 
 .details-div {
-  margin: 3em 4em 3em;
+  margin: 2em 2em 2em;
   width: 50vw;
 }
 .details-div h2{
@@ -186,7 +186,7 @@ nav .btn-logout {
 
 .image-details{
   width: 50vw;
-  height: 70vh;
+  height: 71.5vh;
   display: flex;
   flex-wrap: wrap;
 }
@@ -194,7 +194,7 @@ nav .btn-logout {
 .all-review h4{
   text-align: center;
   margin: 0.5em;
-  width: 25em;
+  width: 35em;
 }
 
 .all-review{
@@ -213,12 +213,25 @@ nav .btn-logout {
 .btn-details{
   display: flex;
 }
+.btn-details a{
+  padding: 0;
+}
+.btn-details button{
+  margin-right: 0.5em;
+  padding: 0.5em;
+  transition: 0.2s;
+}
+
+.btn-details button:hover{
+  border: #f8bddf 2px solid;
+}
+
 .card-review{
   display: flex;
   flex-direction: column;
   margin: 2em;
   background-color: #EBEBEB;
-  width: 92%;
+  width: 90%;
 }
 
 .star-render{
@@ -310,7 +323,7 @@ nav .btn-logout {
   align-items: center;
   flex-wrap: wrap;
   margin-top: 50px;
-  height: 32vh;
+  height: 37.7vh;
 }
 
 .SignupPage-Form input, .LoginPage-Form input{
@@ -498,23 +511,23 @@ nav .btn-logout {
   color: white;
   margin: 0em;
   width: 100%;
-  bottom: 0;
   display: flex;
   flex-wrap: wrap;
 }
 
 
 .footer ul{
-  display: inline-flex;
+  display: flex;
 }
 .footer li{
   list-style: none;
-  margin: 1em;
+  margin: 0.8em 1em;
+
 }
 
 .footer hr{
   border: 1px solid white;
-  width: 90%;
+  width: 95%;
 }
 
 .footer p{
