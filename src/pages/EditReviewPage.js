@@ -33,7 +33,6 @@ const[description, setDescription] = useState("");
       .put(`${API_URL}/api/reviews/${reviewId}`, requestBodyReview, { headers: { Authorization: `Bearer ${storedToken}` } })
       .then(response => {
         navigate(-1);
-        alert("You have successfully updated.");
       })
       .catch(err => {
         console.log("failed to update the review", err);

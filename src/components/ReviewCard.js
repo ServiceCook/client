@@ -80,7 +80,7 @@ function ReviewCard({ description, reviewId, rating, owner, name, picture, servi
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then(() => {
-        navigate("/services");
+        navigate(-0);
       })
       .catch((e) => console.log("failed to delete the review", e));
   };
