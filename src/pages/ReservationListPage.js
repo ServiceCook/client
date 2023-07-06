@@ -64,7 +64,6 @@ function ReservationListPage() {
         </div>
       ) : (
         reservations.map((element) => (
-          
           <div key={element._id} className="reservation-list-page">
             <p>Total Person: {element.totalPerson}</p>
             <p>Price Per Person: {element.pricePerPerson} €</p>
@@ -72,6 +71,7 @@ function ReservationListPage() {
             <p>Address : {element.user.address}</p>
             <h3> Service By {element.fullName}</h3>
             <p>Date: {new Date(element.date).toLocaleDateString("en", { day: "2-digit", month: "long", year: "numeric" })}</p>
+            <p>Hour: {element.hour}</p>
             <div className="btn-reservationList">
             <Link to={`/reservations/edit/${element._id}`}>
               <img className="edit-myReservation" src={editImg} alt="editImg"/>
