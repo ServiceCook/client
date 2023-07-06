@@ -1,8 +1,9 @@
 import axios from "axios"
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom"
 import AddReview from "../components/AddReview";
 import ReviewCard from "../components/ReviewCard";
+import { AuthContext } from "../context/auth.context";
 
 function ServiceDetails(props){
     
@@ -11,6 +12,8 @@ function ServiceDetails(props){
    
     const { serviceId } = useParams();
 
+    const { isLoggedIn, user } = useContext(AuthContext);
+    console.log(user);
 
     const getService = () => {
 

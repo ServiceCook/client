@@ -47,7 +47,8 @@ function EditReservationPage(props) {
       requestBodyReservation,
       { headers: { Authorization: `Bearer ${storeToken}` } })
       .then(response => {
-        navigate("/reservations");
+        navigate(-1);
+        alert("You have successfully updated.");
       })
       .catch(e => console.log("failed to edit the service", e));
   };

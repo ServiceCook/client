@@ -32,8 +32,8 @@ const[description, setDescription] = useState("");
     axios
       .put(`${API_URL}/api/reviews/${reviewId}`, requestBodyReview, { headers: { Authorization: `Bearer ${storedToken}` } })
       .then(response => {
-        // navigate(`/reviews/${reviewId}`);
-        alert("You have successfully updated.")
+        navigate(-1);
+        alert("You have successfully updated.");
       })
       .catch(err => {
         console.log("failed to update the review", err);
@@ -42,7 +42,7 @@ const[description, setDescription] = useState("");
 
   return(
     <div className="edit-review-div">
-      <form onClick={handleFormSubmitReview} className="edit-review">
+      <form onSubmit={handleFormSubmitReview} className="edit-review">
         <label>Description</label>
         <input 
           type="text"
