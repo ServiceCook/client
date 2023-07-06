@@ -172,7 +172,7 @@ nav .btn-logout {
 }
 
 .details-div {
-  margin: 1.5em 1.5em 1.5em;
+  margin: 1.5em 1.5em 0em 1.5em;
   width: 50vw;
 }
 .details-div h2{
@@ -187,7 +187,7 @@ nav .btn-logout {
 
 .image-details{
   width: 50vw;
-  height: 71.8vh;
+  height: 71.4vh;
   display: flex;
   flex-wrap: wrap;
 }
@@ -200,7 +200,7 @@ nav .btn-logout {
 
 .all-review{
   overflow-y: scroll;
-  height: 11.5em;
+  height: 10em;
 }
 
 .review-details{
