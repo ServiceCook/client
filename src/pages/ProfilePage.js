@@ -13,7 +13,6 @@ function ProfilePage() {
   const fetchingProfile = () => {
     axios.get(`${API_URL}/auth/profile`, { headers : { Authorization: `Bearer ${storedToken}`}})
       .then(response => {
-        console.log(response.data._id, "give this data")
         setProfile(response.data)
       })
       .catch(e => console.log("failed fetching data"));

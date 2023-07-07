@@ -19,16 +19,15 @@ function MyWorkPage() {
       try {
         const response = await axios.get(`${API_URL}/api/reservations/all`, { headers : { Authorization: `Bearer ${storedToken}`}});
         setReservations(response.data);
-        const userId = response.data.map(element => {
-          console.log(element.service.owner._id, "owner id")
+        const ownerId = response.data.map(element => {
           return element.service.owner._id}
         )
-        
 
-        const arrayOfId = userId.map(element => {console.log(element, "test"); return element})
+        // const arrayOfId = userId.map(element => {console.log(element, "test"); return element})
+         console.log(ownerId, "give me this data");
+        //  console.log(arrayOfId, "compare this data")
 
-        // const userIdObject = arrayOfId.join("");
-        setOwnerId(arrayOfId);
+        setOwnerId(ownerId);
       } catch (error) {
         console.error("Failed to fetch reservations:", error);
       }
@@ -64,14 +63,11 @@ function MyWorkPage() {
     fetchingProfile();
   }, []);
 
-  console.log(userId, "and", ownerId)
 
   const converObjectToArray = [userId];
   const checkIfTrue = converObjectToArray.every((userId) => ownerId.includes(userId));
-console.log(checkIfTrue);
 
-
-
+  console.log(checkIfTrue)
   return (
     <div>
       <div className="btn-reservation-list">
