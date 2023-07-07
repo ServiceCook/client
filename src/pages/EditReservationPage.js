@@ -1,4 +1,5 @@
 import axios from "axios";
+import { format } from "date-fns";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
@@ -26,8 +27,11 @@ function EditReservationPage(props) {
       setTotalPerson(oneReservation.totalPerson);
       setPricePerPerson(oneReservation.pricePerPerson);
       setTotalPrice(oneReservation.totalPrice);
-      setDate(oneReservation.date);
-      setHour(oneReservation.hour)
+      setHour(oneReservation.hour);
+
+      // Format the date received from the server
+      const formattedDate = format(new Date(oneReservation.date), "yyyy-MM-dd");
+      setDate(formattedDate);
     })
     .catch(err => console.log("failed updating the reservation"));
   }, [reservationId]);

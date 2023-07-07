@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# CHEF ON THE WAY APP SERVER
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## About
+REST API for the Chef On The Way app
+- This repo implements the backend REST API (built in Express + MongoDB).
+- A repository for with the frontend (React App) can be found here: https://github.com/ServiceCook/client
 
-## Available Scripts
+## Instruction
+To run in your computer, follow these steps:
+- git clone
+- install dependencies: npm install
+- install nodemailer : npm install nodemailer (since we use nodemailer to transmit the message)
+- install cloudinary: npm install cloudinary multer multer-storage-cloudinary (to allow you to user the cloudinary)
+- create .env file with the following environment variables
+  - ORIGIN: the origin location (example, ORIGIN=5005),
+  - TOKEN_SECRET: used to sign auth token (example, TOKEN_SECRET = mysecrett0ken)
+  - CLOUDINARY_NAME = add-your-cloudinary-name
+  - CLOUDINARY_KEY = add-your-cloudinary-key
+  - CLOUDINARY_SECRET = add-your-cloudinary-secret
+  - MAIL_USERNAME= add your valid email
+  - MAIL_PASSWORD= add your valid application password (you need to create this password)
 
-In the project directory, you can run:
+## API Endpoints
 
-### `npm start`
+Auth endpoints
+| HTTP verb | Path         | Request Headers| Request body                                                               | Description   |
+| --------- | -------------| -------------- | ---------------------------------------------------------------------------| ------------- |
+| POST      | /auth/upload | -              | -                                                                          | upload image  |
+| POST      | /auth/signup | -              |{email:String, password:String, name:String, address:String, picture:string}| Create Account|
+| GET       | /auth/profile| Authorization  | -                                                                          | get profile   |
+| POST      | /auth/login  | -              | { email: String, password: String }                                        | Login         |
+| GET       | /auth/verify | Authorization  | -                                                                          | Veriy jwt     |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Profil endpoints
+| HTTP verb | Path             | Request Headers| Request body                        | Description       |
+| --------- | -------------    | -------------- | ------------------------------------| -------------     |
+| GET       | /api/myService   | Authorization  | -                                   | Service Page      |
+| POST      | /api/reservation | Authorization  | -                                   | Reservation Page  |
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Reservation endpoints
+| HTTP verb | Path                                | Request Headers| Request body                        | Description       |
+| --------- | ----------------------------------- | -------------- | ------------------------------------| -------------     |
+| POST      | /api/services/:serviceId/reserve    | Authorization  | {fullName, totalPerson, pricePerPerson, date, hour}     | Reserve service      |
+| PUT       | /api/reservations/:reservationId    |  Authorization | -                                                      | Get reservation  |
+| PUT       | /api/reservations/:reservationId    |  Authorization | {fullName, totalPerson, pricePerPerson, date, hour}     | Edit reservation  |
+| DELETE    | /api/reservations/:reservationId    |  Authorization | -                                   | Delete reservation  |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Review endpoints
+| HTTP verb | Path                  | Request Headers| Request body                                                               | Description   |
+| --------- | -------------         | -------------- | ---------------------------------------------------------------------------| ------------- |
+| POST      | /api/reviews          | Authorization  | { description, serviceId, rating }                                         | Create review |
+| GET       | /api/reviews          | -              | -                                                                          | Get review    |
+| GET       | /api/reviews/:reviewId| Authorization  | -                                                                          | Get review in details   |
+| PUT       | /api/reviews/:reviewId| Authorization  | { description, rating }                                                    | Get review in details   |
+| DELETE    | /api/reviews/:reviewId| Authorization  | ------------------  | Delete review     |
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Service endpoints
+| HTTP verb | Path                    | Request Headers| Request body                                                               | Description   |
+| --------- | ----------------------  | -------------- | ---------------------------------------------------------------------------| ------------- |
+| POST      | /api/services           | Authorization  | {picture, speciality, place, description, pricePerPerson, availability } | Create service |
+| GET       | /api/services           | -              | -                | Get list of services    |
+| GET       | /api/services/:serviceId| -              | -                | Get service in details  |
+| PUT       | /api/services/:serviceId| Authorization  | {picture, speciality, place, description, pricePerPerson, availability } | Edit service   |
+| DELETE    | /api/services/:serviceId| Authorization  | -                | Delete review     |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Demo
+A demo of the REST API can be found here:https://chef-ontheway.netlify.app/
