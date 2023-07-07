@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import defaultPicture from '../images/tableexposition.jpg'
 
 function ServiceCard({ speciality, place, picture, _id, owner, pricePerPerson, availability}) {
       console.log('owner', owner.name)
@@ -8,7 +9,7 @@ function ServiceCard({ speciality, place, picture, _id, owner, pricePerPerson, a
             <Link to={{ pathname: `/services/${_id}`, state: { picture } }}>
 
             <div className="img-service-list">
-                {picture ? <img src={picture} alt="img" /> : <p>sorry, no picture</p>}
+                {picture ? <img src={picture} alt="img" /> : <img src={defaultPicture} alt="defaultPictures"/>}
             
 
                 <div className="description-list">

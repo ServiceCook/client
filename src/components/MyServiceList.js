@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import IsPrivate from "../components/IsPrivate";
 import deleteImg from '../images/delete-icon.png'
 import editImg from '../images/edit-icon.png'
-
+import defaultPicture from '../images/tableexposition.jpg'
 
 function MyServiceList({ speciality, place, picture, _id, owner, pricePerPerson, availability, deleteService}) {
 
@@ -11,7 +11,7 @@ function MyServiceList({ speciality, place, picture, _id, owner, pricePerPerson,
             <div className="description-myService">
             <Link to={{ pathname: `/services/${_id}`, state: { picture } }}>
                 <div className="img-service-myList">
-                    {picture ? <img src={picture} alt="img"/> : <p>sorry, no picture</p>}
+                    {picture ? <img src={picture} alt="img"/> : <img src={defaultPicture} alt="defaultPictures"/>}
                 </div>
                 <div className="description-mylist">
                     <h1>{speciality}</h1>
