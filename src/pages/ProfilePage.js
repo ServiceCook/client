@@ -1,10 +1,27 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../context/auth.context";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 function ProfilePage() {
-  const { isLoggedIn, user } = useContext(AuthContext);
 
+  const API_URL = process.env.REACT_APP_SERVER_URL; 
+  const { isLoggedIn, user } = useContext(AuthContext);
+  const[profile, setProfile] = useState("");
+  const storedToken = localStorage.getItem("authToken");
+
+  const fetchingProfile = () => {
+    axios.get(`${API_URL}/auth/profile`, { headers : { Authorization: `Bearer ${storedToken}`}})
+      .then(response => {
+        setProfile(response.data)
+      })
+      .catch(e => console.log("failed fetching data"));
+  }
+
+  useEffect(() => {
+    fetchingProfile();
+  }, []);
+  
 
   return(
     <div>
@@ -23,14 +40,14 @@ function ProfilePage() {
       </div>
 
       <div className="profile">
-        {isLoggedIn && (
+        {isLoggedIn && user && (
           <div>
-            <h1>Welcome <span>{user.name}</span></h1>
+            <h1>Welcome {profile.name}</h1>
             <div>
-              <img src={user.picture} alt="img" className="profile-picture"/>
+              <img src={profile.picture} alt="img" className="profile-picture"/>
             </div>
-            <h3>Address: {user.address}</h3>
-            <p>Email: {user.email}</p>
+            <h3>Address: {profile.address}</h3>
+            <p>Email: {profile.email}</p>
           </div>
         )}
       </div>

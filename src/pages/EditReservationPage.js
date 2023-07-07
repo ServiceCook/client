@@ -14,6 +14,7 @@ function EditReservationPage(props) {
   const[pricePerPerson, setPricePerPerson] = useState("");
   const[totalPrice, setTotalPrice] = useState("");
   const[date, setDate] = useState("");
+  const[hour, setHour] = useState("");
 
   const storeToken = localStorage.getItem('authToken');
 
@@ -26,6 +27,7 @@ function EditReservationPage(props) {
       setPricePerPerson(oneReservation.pricePerPerson);
       setTotalPrice(oneReservation.totalPrice);
       setDate(oneReservation.date);
+      setHour(oneReservation.hour)
     })
     .catch(err => console.log("failed updating the reservation"));
   }, [reservationId]);
@@ -40,6 +42,7 @@ function EditReservationPage(props) {
       pricePerPerson,
       totalPrice,
       date,
+      hour
     };
 
     axios
@@ -80,6 +83,15 @@ function EditReservationPage(props) {
           value={date}
           onChange={e => {setDate(e.target.value)}}
         />
+
+        <label>hour</label>
+        <input 
+          type="hour"
+          name="hour"
+          value={hour}
+          onChange={e => {setHour(e.target.value)}}
+        />
+
         <button type="submit">Update</button>
       </form>
     </div>
