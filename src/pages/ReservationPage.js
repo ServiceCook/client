@@ -77,7 +77,7 @@ function ReservationPage(props){
 
     
     if(reservation === undefined) {
-        return <h1>Loading...</h1>
+        return <h1 className="loading">Loading...</h1>
     } else {
         return(
             <div className="reservation-page">

@@ -34,7 +34,7 @@ function ServiceDetails(props){
 
 
     if(services === undefined){
-        return(<h1>Loading...</h1>)
+        return(<h1 className="loading">Loading...</h1>)
     }else {      
     return (
     <div>
