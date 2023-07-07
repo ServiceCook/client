@@ -103,7 +103,10 @@ function MyWorkPage() {
             <p>Total Person: {element.totalPerson}</p>
             <p>Price Per Person: {element.pricePerPerson} €</p>
             <p>Total Price: {element.totalPrice} €</p>
-            <p>Address : {element.user.address}</p>
+            {/* <p>Address : {element.user.address}</p> */}
+            {element.user && element.user.address && (
+            <p>Address: {element.user.address}</p>
+            )}
             <h3> Service By {element.fullName}</h3>
             <p>Date: {new Date(element.date).toLocaleDateString("en", { day: "2-digit", month: "long", year: "numeric" })}</p>
             <p>Hour: {element.hour}</p>
