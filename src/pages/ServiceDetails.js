@@ -13,6 +13,7 @@ function ServiceDetails(props){
     const { serviceId } = useParams();
 
     const { isLoggedIn, user } = useContext(AuthContext);
+
     const getService = () => {
 
         const storedToken = localStorage.getItem("authToken");
@@ -61,11 +62,11 @@ function ServiceDetails(props){
                         <Link to={`/services/${serviceId}/reserve`}>
                             {(user && user._id === services.owner._id) ? <></> : <button>Reserve</button>}
                         </Link>
-                        <Link to="/services"><button>Back to the List</button></Link>
 
                         {(user && user._id === services.owner._id) ? <></> : 
                         <AddReview getService={getService} serviceId={serviceId} />}
 
+                        <Link to="/services"><button>Back to the List</button></Link>
                     </div>
 
                     <div className="all-review">

@@ -11,8 +11,25 @@
   padding: 2em;
 }
 
+.reservation-message{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 50vh;
+  background-color: #EBEBEB;
+  margin: 0;
+  padding: 2em;
+}
 
-
+.reservation-message-service{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 54.8vh;
+  background-color: #EBEBEB;
+  margin: 0;
+  padding: 2em;
+}
 /* Navbar */
 
 .navbar {
@@ -297,7 +314,9 @@ nav .btn-logout {
 .gold-star {
   color: gold;
 }
-
+.add-review-div{
+text-align: center;
+}
 
 
 
@@ -366,15 +385,6 @@ nav .btn-logout {
 
 
 /* Reservation Page */
-.reservation-message {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  background-color: #EBEBEB;
-  height: auto;
-}
-
-
 .allMyReservation{
   display: flex;
   flex-flow: row wrap;

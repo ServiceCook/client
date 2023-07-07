@@ -56,12 +56,12 @@ function AddReview(props) {
   };
 
   return (
-    <div className="add-review-div">
+    <div >
       {isLoggedIn && user ? (
         <div>
           <button onClick={toggleFormVisibility}>Give your review</button>
           {showForm && (
-            <div>
+            <div className="add-review-div">
               <h4>Description</h4>
               <form onSubmit={handleSubmitNewReview}>
                 <textarea
