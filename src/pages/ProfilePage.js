@@ -13,6 +13,7 @@ function ProfilePage() {
   const fetchingProfile = () => {
     axios.get(`${API_URL}/auth/profile`, { headers : { Authorization: `Bearer ${storedToken}`}})
       .then(response => {
+        console.log(response.data._id, "give this data")
         setProfile(response.data)
       })
       .catch(e => console.log("failed fetching data"));
@@ -36,6 +37,10 @@ function ProfilePage() {
 
         <Link to="/myService">
           <button>Your Own Service</button>
+        </Link>
+
+        <Link to="/mywork">
+          <button>My Work</button>
         </Link>
       </div>
 

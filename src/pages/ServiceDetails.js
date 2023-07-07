@@ -30,7 +30,7 @@ function ServiceDetails(props){
     useEffect(() => {
         getService();
     }, []);
-
+    
 
     if(services === undefined){
         return(<h1 className="loading">Loading...</h1>)
@@ -41,11 +41,6 @@ function ServiceDetails(props){
             <div>
                 {services.picture ? <img src={services.picture} alt="Service" className="image-details"/> : <p>No picture available</p>}
             </div>
-
-
-
-
-
 
             <div className="details-div">
 
