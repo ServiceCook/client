@@ -19,12 +19,24 @@ function MyWorkPage() {
       try {
         const response = await axios.get(`${API_URL}/api/reservations/all`, { headers : { Authorization: `Bearer ${storedToken}`}});
         setReservations(response.data);
-        const ownerId = response.data.map(element => {
-          return element.service.owner._id}
-        )
+        // const ownerId = response.data.map(element => {
+        //   return element.service.owner._id}
+        // )
+
+        const ownerId = response.data.map((element) => {
+          if (element.service && element.service.owner) {
+            return element.service.owner._id;
+          } else {
+            return null;
+          }
+        });
+        
+
+        console.log(response.data)
+        console.log(ownerId, "owner id")
 
         // const arrayOfId = userId.map(element => {console.log(element, "test"); return element})
-         console.log(ownerId, "give me this data");
+        //  console.log(ownerId, "give me this data");
         //  console.log(arrayOfId, "compare this data")
 
         setOwnerId(ownerId);
