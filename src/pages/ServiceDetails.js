@@ -13,8 +13,6 @@ function ServiceDetails(props){
     const { serviceId } = useParams();
 
     const { isLoggedIn, user } = useContext(AuthContext);
-    console.log(user);
-
     const getService = () => {
 
         const storedToken = localStorage.getItem("authToken");

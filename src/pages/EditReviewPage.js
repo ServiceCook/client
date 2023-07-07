@@ -16,7 +16,6 @@ const[description, setDescription] = useState("");
     axios
       .get(`${API_URL}/api/reviews/${reviewId}`, { headers: { Authorization: `Bearer ${storedToken}` } })
       .then(response => {
-        console.log(response, "tell me this response");
         const oneReview = response.data;
         setDescription(oneReview.description);
       })

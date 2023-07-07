@@ -40,7 +40,6 @@ function ReservationListPage() {
         console.log("Failed to delete reservation:", error);
       });
   };
-    console.log(reservations);
   return (
     <div>
       <div className="btn-reservation-list">

@@ -14,8 +14,6 @@ function ServiceList() {
   const { isLoggedIn, user } = useContext(AuthContext);
   const storeToken = localStorage.getItem('authToken');
 
-  console.log(user);
-
   const getAllService = () => {
     axios
       .get(`${API_URL}/api/services`, { headers: { Authorization: `Bearer ${storeToken}` }})

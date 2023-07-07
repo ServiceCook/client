@@ -26,10 +26,7 @@ function LoginPage(props) {
     const requestBody = { email, password };
  
     axios.post(`${API_URL}/auth/login`, requestBody)
-      .then((response) => {
-
-        console.log(response.data.authToken );
-   
+      .then((response) => {   
         storeToken(response.data.authToken);
 
         authenticateUser()

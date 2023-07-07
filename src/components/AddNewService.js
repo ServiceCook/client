@@ -28,7 +28,6 @@ function AddNewService(props) {
 
     uploadImage(uploadData)
       .then((response) => {
-        console.log(response.picture);
         setPicture(response.picture);
       })
       .catch((err) => console.log("Error while uploading the file: ", err));

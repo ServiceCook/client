@@ -2,7 +2,6 @@ import { Link } from "react-router-dom"
 import defaultPicture from '../images/tableexposition.jpg'
 
 function ServiceCard({ speciality, place, picture, _id, owner, pricePerPerson, availability}) {
-      console.log('owner', owner.name)
       let ownerName = owner.name
     return(                 
             <div className="description-service">

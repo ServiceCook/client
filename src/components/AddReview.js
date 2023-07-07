@@ -22,7 +22,7 @@ function AddReview(props) {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((response) => {
-        console.log(response);
+        // console.log(response);
         setDescription("");
         setRating(0);
         props.getService(); // refers to the element of the AddReview

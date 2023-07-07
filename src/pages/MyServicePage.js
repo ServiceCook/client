@@ -17,7 +17,6 @@ function MyServicePage(props) {
         headers: { Authorization: `Bearer ${storeToken}` },
       })
       .then((result) => {
-        console.log(result.data);
         setMyServices(result.data);
       })
       .catch((e) => console.log(e));
