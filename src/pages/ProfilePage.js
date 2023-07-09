@@ -11,7 +11,7 @@ function ProfilePage() {
   const storedToken = localStorage.getItem("authToken");
 
   const fetchingProfile = () => {
-    axios.get(`${API_URL}/auth/profile`, { headers : { Authorization: `Bearer ${storedToken}`}})
+    axios.get(`${API_URL}/api/profile`, { headers : { Authorization: `Bearer ${storedToken}`}})
       .then(response => {
         setProfile(response.data)
       })
@@ -22,7 +22,6 @@ function ProfilePage() {
     fetchingProfile();
   }, []);
   
-
   return(
     <div>
       <div className="btn-reservation-list">
@@ -42,19 +41,23 @@ function ProfilePage() {
           <button>My Work</button>
         </Link>
       </div>
-
+    
       <div className="profile">
         {isLoggedIn && user && (
-          <div>
+          <div key={profile._id}>
             <h1>Welcome {profile.name}</h1>
             <div>
               <img src={profile.picture} alt="img" className="profile-picture"/>
             </div>
             <h3>Address: {profile.address}</h3>
             <p>Email: {profile.email}</p>
+            <Link to={`/profile/edit/${profile._id}`}>
+              <button>Edit Profile</button>
+            </Link>
           </div>
         )}
       </div>
+
     </div>
   );
 }

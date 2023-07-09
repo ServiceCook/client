@@ -1,13 +1,15 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useNavigate, useParams, } from "react-router-dom";
-
+import { AuthContext } from "../context/auth.context";
 
 function ReservationPage(props){
-   
+    const getUserId = localStorage.getItem("userId")
+
+    const {user} = useContext(AuthContext);
     const [reservation, setReservation] = useState([]);
     const [service, setService] = useState("");
-    const [user, setUser] = useState("");
+    // const [user, setUser] = useState("");
     const [fullName, setFullName] = useState("");
     const [totalPerson, setTotalPerson] = useState("");
     const [pricePerPerson, setPricePerPerson] = useState("");
@@ -16,15 +18,12 @@ function ReservationPage(props){
     const [hour, setHour] = useState("");
 
     const API_URL = process.env.REACT_APP_SERVER_URL
-        
+    
     const { serviceId } = useParams();
     const navigate = useNavigate()
+    const storedToken = localStorage.getItem("authToken");
     
-
     const getService = () => {
-
-        const storedToken = localStorage.getItem("authToken");
-        
         axios
             .get(`${API_URL}/api/services/${serviceId}`, { headers : { Authorization: `Bearer ${storedToken}`}})
                 .then((e) => {
@@ -36,11 +35,10 @@ function ReservationPage(props){
     }
 
       const getReservation = (e) => {
-
         e.preventDefault();
 
         const newReservation = {
-            service, 
+            serviceId, 
             user,
             totalPerson,
             pricePerPerson,
@@ -50,24 +48,25 @@ function ReservationPage(props){
             hour
           };
 
-        const storedToken = localStorage.getItem("authToken");
-    
-        axios
+        if(getUserId !== user._id) {
+            axios
             .post(`${API_URL}/api/services/${serviceId}/reserve`, newReservation, { headers : { Authorization: `Bearer ${storedToken}`}})
-                .then((response) => {
+                .then((response) => {                    
                     const reservationData = response.data;
                     setService(reservationData._id);
-                    setUser("");
+                    // setUser("");
                     setTotalPerson("");
                     setTotalPrice("");
                     setDate("");
-                    setHour("")
+                    setHour("");
 
-                    navigate('/confirmation')
+                    navigate('/confirmation');
                 })
                 .catch(err => {
                     console.log("failed to reserve the service", err);
-                })
+                });
+        } else {alert(`Hi, ${user.name} you have order this service, please check your order status. 
+If you want to re-order, you must delete the previous order.`)}
     }
     
      useEffect(() => {
@@ -83,7 +82,7 @@ function ReservationPage(props){
             <div className="reservation-page">
                 <div>
                     <h1>Reservation</h1>
-                    <h2>{fullName}</h2>
+                    <h2>Service by: {fullName}</h2>
                     <h3>Price per Person : {pricePerPerson}$</h3>
                 </div>
                 <form onSubmit={getReservation} className="form-reservation">
@@ -113,8 +112,6 @@ function ReservationPage(props){
                     />
                     <button type="submit" >Reserve</button>
                 </form>
-
-
             </div>
 
         )

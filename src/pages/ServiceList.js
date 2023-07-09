@@ -1,8 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import ServiceCard from "../components/ServiceCard";
-import { useContext } from "react";
-import { AuthContext } from "../context/auth.context";
 
 function ServiceList() {
   const API_URL = process.env.REACT_APP_SERVER_URL
@@ -11,7 +9,6 @@ function ServiceList() {
   const [place, setSearchPlace] = useState('');
   const [pricePerPerson, setSearchPricePerPerson] = useState('');
 
-  const { isLoggedIn, user } = useContext(AuthContext);
   const storeToken = localStorage.getItem('authToken');
 
   const getAllService = () => {
@@ -31,6 +28,7 @@ function ServiceList() {
   useEffect(() => {
     getAllService();
   }, [place, pricePerPerson]);
+
 
   if (services === undefined) {
     return <h1 className="loading">Loading...</h1>;
@@ -54,8 +52,6 @@ function ServiceList() {
             className="filter-input"
             placeholder="Filter by Max Price"
           />
-                  
-          
         
         </div>
         <div className="title-list"><h1>Choose your fighter</h1></div>
@@ -64,6 +60,7 @@ function ServiceList() {
             <p>No services found.</p>
           ) : (
             services.map((service) => (
+              //console.log(service.availability)
               <div key={service._id} className="container-service-card-list">
                 <ServiceCard key={service._id} {...service} />
               </div>

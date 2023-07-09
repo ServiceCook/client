@@ -20,6 +20,7 @@ import EditReservationPage from './pages/EditReservationPage';
 import Footer from './components/Footer'
 import MessagePage from './pages/MessagePage';
 import MyWorkPage from './pages/MyWorkPage';
+import EditProfilePage from './pages/EditProfilePage';
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
         <Route path='/reservations/edit/:reservationId' element={<IsPrivate> <EditReservationPage /> </IsPrivate>} />
         <Route path='/message' element={<MessagePage />}/>
         <Route path='/mywork' element={<MyWorkPage />} />
+        <Route path='/profile/edit/:userId' element={<EditProfilePage />} />
       </Routes>
       <Footer />
     </div>

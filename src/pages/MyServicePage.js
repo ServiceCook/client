@@ -59,8 +59,8 @@ function MyServicePage(props) {
           <div className="reservation-message-service">
             <h3>You haven't made any service yet.</h3>
             <h4>Please, make your service now.</h4>
-            <Link to="/services">
-            <button>Order</button>
+            <Link to="/create">
+            <button>Create</button>
           </Link>
           </div>
         ) : (
@@ -69,8 +69,7 @@ function MyServicePage(props) {
           <div className="list-of-myService">
             {myServices.map((service) => {
               return (
-
-                <div className="container-service-card-myList">
+                <div className="container-service-card-myList" key={service._id}>
                   <MyServiceList key={service._id} {...service} deleteService={deleteService} />
                 </div>
               );

@@ -62,7 +62,7 @@ function EditReservationPage(props) {
   
   return(
     <div className="edit-reservation-page">
-      <form onSubmit={handleEditReservation} className="edit-reservation-form">
+        <form onSubmit={handleEditReservation} className="edit-reservation-form">
         
         <label>Total Person</label>
         <input 

@@ -17,6 +17,9 @@ function ReservationListPage() {
         const response = await axios.get(`${API_URL}/api/reservations`, { headers : { Authorization: `Bearer ${storedToken}`}});
 
         setReservations(response.data);
+        const setUserId = response.data.map(element => {return element.user._id});
+        const userId = localStorage.setItem("userId", `${setUserId}`)
+
       } catch (error) {
         console.error("Failed to fetch reservations:", error);
       }
@@ -64,6 +67,7 @@ function ReservationListPage() {
       ) : (
         reservations.map((element) => (
           <div key={element._id} className="reservation-list-page">
+            <h3>Order by: {element.user.name}</h3>
             <p>Total Person: {element.totalPerson}</p>
             <p>Price Per Person: {element.pricePerPerson} €</p>
             <p>Total Price: {element.totalPrice} €</p>

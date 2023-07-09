@@ -54,7 +54,7 @@ function MyWorkPage() {
   };
 
   const fetchingProfile = () => {
-    axios.get(`${API_URL}/auth/profile`, { headers : { Authorization: `Bearer ${storedToken}`}})
+    axios.get(`${API_URL}/api/profile`, { headers : { Authorization: `Bearer ${storedToken}`}})
       .then(response => {
         setUserId(response.data._id) //id of the user who reserved the service
       })
@@ -68,7 +68,6 @@ function MyWorkPage() {
   const converObjectToArray = [userId];
   const checkIfTrue = converObjectToArray.every((userId) => ownerId.includes(userId));
 
-  console.log(checkIfTrue)
   return (
     <div>
       <div className="btn-reservation-list">
@@ -89,6 +88,7 @@ function MyWorkPage() {
       ) : (
         reservations.map((element) => (
           <div key={element._id} className="reservation-list-page">
+            <h3>Order by: {element.user.name}</h3>
             <p>Total Person: {element.totalPerson}</p>
             <p>Price Per Person: {element.pricePerPerson} €</p>
             <p>Total Price: {element.totalPrice} €</p>

@@ -12,7 +12,7 @@ function ServiceDetails(props){
    
     const { serviceId } = useParams();
 
-    const { isLoggedIn, user } = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
 
     const getService = () => {
 
@@ -67,7 +67,7 @@ function ServiceDetails(props){
                     <div className="all-review">
                     <h4 className="reviews-title">Reviews:</h4>
                         {services && services.reviews.map(review => (
-                            <ReviewCard key={review} serviceId={serviceId} reviewId={review._id} description={review.description} ownderId={review.owner} name={review.name} picture={review.picture} {...review}/>
+                            <ReviewCard key={review._id} serviceId={serviceId} reviewId={review._id} description={review.description} ownderId={review.owner} name={review.name} picture={review.picture} {...review}/>
                         ))}
                     </div>
                 </div>

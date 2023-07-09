@@ -52,6 +52,7 @@ function AddNewService(props) {
         headers: { Authorization: `Bearer ${storeToken}` },
       })
       .then((response) => {
+        //to reset the form fields after the form is successfully submitted and the service is created
         setPicture("");
         setSpeciality("");
         setPlace("");
@@ -130,6 +131,7 @@ function AddNewService(props) {
         />
 
         <label>Availability</label>
+        
         <select
           name="availability"
           value={availability}
