@@ -77,6 +77,10 @@ function AddNewService(props) {
         <Link to="/myService">
           <button>Your Own Service</button>
         </Link>
+
+        <Link to="/mywork">
+          <button>My Work</button>
+        </Link>
       </div>
 
       <form onSubmit={handleSubmit} className="add-new-service">

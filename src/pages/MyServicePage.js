@@ -54,6 +54,10 @@ function MyServicePage(props) {
           <Link to="/reservations">
             <button>Your Order</button>
           </Link>
+
+          <Link to="/mywork">
+          <button>My Work</button>
+        </Link>
         </div>
         {myServices.length === 0 ? (
           <div className="reservation-message-service">

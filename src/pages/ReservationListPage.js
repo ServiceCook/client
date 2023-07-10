@@ -53,6 +53,10 @@ function ReservationListPage() {
         <Link to="/myService">
           <button>Your Own Service</button>
         </Link>
+        
+        <Link to="/mywork">
+          <button>My Work</button>
+        </Link>
       </div>
       <div className="allMyReservation">
       {reservations.length === 0 
