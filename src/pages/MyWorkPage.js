@@ -11,6 +11,7 @@ function MyWorkPage() {
   const [reservations, setReservations] = useState([]);
   const [ownerId, setOwnerId] = useState("");
   const [userId, setUserId] = useState("");
+  const [myWorkLength, setMyWorkLength] = useState("");
 
   const storedToken = localStorage.getItem("authToken");
 
@@ -29,6 +30,8 @@ function MyWorkPage() {
         });
         
         setOwnerId(ownerId);
+        setMyWorkLength(response.data.length);
+
       } catch (error) {
         console.error("Failed to fetch reservations:", error);
       }
@@ -47,6 +50,7 @@ function MyWorkPage() {
         setReservations((prevReservations) =>
           prevReservations.filter((reservation) => reservation._id !== reservationId)
         );
+        window.location.reload();
       })
       .catch((error) => {
         console.log("Failed to delete reservation:", error);
@@ -64,10 +68,10 @@ function MyWorkPage() {
     fetchingProfile();
   }, []);
 
-
   const converObjectToArray = [userId];
   const checkIfTrue = converObjectToArray.every((userId) => ownerId.includes(userId));
-
+  const storedMyWorkLength = localStorage.setItem("myWorkLength", myWorkLength);
+    
   return (
     <div>
       <div className="btn-reservation-list">
@@ -85,7 +89,7 @@ function MyWorkPage() {
 
 
       </div>
-      <div className="allMyReservation">
+      <div className="allMyReservation">     
       { !checkIfTrue 
       ? (
         <div className="reservation-message">

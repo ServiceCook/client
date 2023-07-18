@@ -4,8 +4,6 @@ import defaultPicture from '../images/tableexposition.jpg'
 function ServiceCard({ speciality, place, picture, _id, owner, pricePerPerson, availability}) {
     const ownerName = owner.name
 
-    console.log(availability !== "Available")
-
     return(                 
             <div className="description-service">
             {availability === "Available"

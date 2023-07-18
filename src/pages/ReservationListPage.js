@@ -10,6 +10,8 @@ function ReservationListPage() {
   
   const [reservations, setReservations] = useState([]);
   const storedToken = localStorage.getItem("authToken");
+  const [counter, setCounter] = useState(0);
+  const [userIdReserve, setUserIdReserve] = useState("");
   
   useEffect(() => {
     const fetchReservations = async () => {
@@ -17,8 +19,14 @@ function ReservationListPage() {
         const response = await axios.get(`${API_URL}/api/reservations`, { headers : { Authorization: `Bearer ${storedToken}`}});
 
         setReservations(response.data);
-        const setUserId = response.data.map(element => {return element.user._id});
-        const userId = localStorage.setItem("userId", `${setUserId}`)
+
+        const findServiceId = response.data.map(element => {return element.service._id});
+        const storedOwnerId = localStorage.setItem("userId", `${findServiceId}`);
+        
+        const userIdWhoReserve = response.data.map(element => {return element.user._id});
+
+        setUserIdReserve(userIdWhoReserve);
+        setCounter(response.data.length)
 
       } catch (error) {
         console.error("Failed to fetch reservations:", error);
@@ -38,11 +46,17 @@ function ReservationListPage() {
         setReservations((prevReservations) =>
           prevReservations.filter((reservation) => reservation._id !== reservationId)
         );
+        window.location.reload();
       })
       .catch((error) => {
         console.log("Failed to delete reservation:", error);
       });
   };
+
+  const storeTheOrderListLength = localStorage.setItem("lengthOfOrder", counter);
+  const storeUserIdWhoReserve = localStorage.setItem("userIdWhoReserve", userIdReserve);
+  
+
   return (
     <div>
       <div className="btn-reservation-list">
@@ -70,8 +84,11 @@ function ReservationListPage() {
         </div>
       ) : (
         reservations.map((element) => (
+        
           <div key={element._id} className="reservation-list-page">
             <h3>Order by: {element.user.name}</h3>
+            <h4>{element.service.speciality}</h4>
+            <p>Category: {element.category}</p>
             <p>Total Person: {element.totalPerson}</p>
             <p>Price Per Person: {element.pricePerPerson} €</p>
             <p>Total Price: {element.totalPrice} €</p>

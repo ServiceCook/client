@@ -8,7 +8,9 @@ import { AuthContext } from "../context/auth.context";
 function ServiceDetails(props){
     
     const API_URL = process.env.REACT_APP_SERVER_URL    
-    const [services, setServices] = useState(undefined)
+    const [services, setServices] = useState(undefined);
+    const [serviceIdCard, setServiceIdCard]= useState("");
+    const [ownerId, setOwnerId] = useState("");
    
     const { serviceId } = useParams();
 
@@ -22,7 +24,9 @@ function ServiceDetails(props){
             .get(`${API_URL}/api/services/${serviceId}`, { headers : { Authorization: `Bearer ${storedToken}`}})
                 .then((e) => {
                     const oneService = e.data
-                    setServices(oneService)
+                    setServices(oneService);
+                    setServiceIdCard(oneService._id);
+                    setOwnerId(oneService.owner._id);
                 })
                 .catch((e) => console.log(e))
     }
@@ -31,7 +35,14 @@ function ServiceDetails(props){
         getService();
     }, []);
     
-
+    const storedServiceIdCard = localStorage.setItem("serviceId", serviceIdCard);
+    const serviceIdFromReservationListPage = localStorage.getItem("userId");
+    const serviceIdFromServiceDetailsPage = localStorage.getItem("serviceId")
+    
+    const checkIfInclude = serviceIdFromReservationListPage.includes(serviceIdFromServiceDetailsPage);
+    
+    const storedOwnerId = localStorage.setItem("ownerId", ownerId);
+        
     if(services === undefined){
         return(<h1 className="loading">Loading...</h1>)
     }else {      
@@ -45,6 +56,7 @@ function ServiceDetails(props){
             <div className="details-div">
 
                 <h2>Service by : {services.owner.name}</h2>
+                
 
                 <p>Description : {services.description}</p>
                 <h4>Speciality : {services.speciality}</h4>
@@ -54,10 +66,16 @@ function ServiceDetails(props){
  
                 <div className="review-details">
                     <div className="btn-details">
-                        <Link to={`/services/${serviceId}/reserve`}>
-                            {(user && user._id === services.owner._id) ? <></> : <button>Reserve</button>}
-                        </Link>
-
+                        {!checkIfInclude 
+                            ? <Link to={`/services/${serviceId}/reserve`}>
+                                {(user && user._id === services.owner._id) 
+                                    ? <></> 
+                                    : <button>Reserve</button>
+                                }
+                              </Link>
+                            : <p></p>
+                        }
+                        
                         {(user && user._id === services.owner._id) ? <></> : 
                         <AddReview getService={getService} serviceId={serviceId} />}
 

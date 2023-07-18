@@ -4,24 +4,45 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 function ProfilePage() {
-
+  const storedToken = localStorage.getItem("authToken");
+  const getTheLengthOfOrderList = localStorage.getItem("lengthOfOrder");
+  const getMyWorkLength = localStorage.getItem("myWorkLength");
+  const getUserIdWhoReserve = localStorage.getItem("userIdWhoReserve");
+  const getOwnerId = localStorage.getItem("ownerId");
+  
   const API_URL = process.env.REACT_APP_SERVER_URL; 
   const { isLoggedIn, user } = useContext(AuthContext);
   const[profile, setProfile] = useState("");
-  const storedToken = localStorage.getItem("authToken");
+  const[notificationOrder, setNotificationOrder] = useState("");
+  const[notificationWork, setNotificationWork] = useState("");
 
   const fetchingProfile = () => {
     axios.get(`${API_URL}/api/profile`, { headers : { Authorization: `Bearer ${storedToken}`}})
       .then(response => {
         setProfile(response.data)
+
+        console.log(response.data._id)
       })
       .catch(e => console.log("failed fetching data"));
-  }
+  };
 
+  const profileInArray = [profile._id];
+  const getUserIdWhoReserveInArray = [getUserIdWhoReserve];
+  const checkIfTrueOrderUserId = getUserIdWhoReserveInArray.some(id => id.includes(profileInArray));
+      
   useEffect(() => {
     fetchingProfile();
+    if(getTheLengthOfOrderList > 0 && checkIfTrueOrderUserId) {
+        setNotificationOrder(getTheLengthOfOrderList);
+    } else{setNotificationOrder("")};
+
+    if(getMyWorkLength > 0 && getOwnerId === user._id) {
+        setNotificationWork(getMyWorkLength);
+    } else{setNotificationWork("")};
+    
   }, []);
   
+
   return(
     <div>
       <div className="btn-reservation-list">
@@ -30,7 +51,7 @@ function ProfilePage() {
         </Link>
 
         <Link to="/reservations">
-          <button>Your Order</button>
+          <button>Your Order <span className="notification">{notificationOrder}</span></button>
         </Link>
 
         <Link to="/myService">
@@ -38,7 +59,8 @@ function ProfilePage() {
         </Link>
 
         <Link to="/mywork">
-          <button>My Work</button>
+          <button>My Work <span className="notification">{notificationWork}</span></button>
+          
         </Link>
       </div>
     
