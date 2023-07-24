@@ -1,13 +1,19 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../context/auth.context";
 import { Link } from "react-router-dom";
 import logo from '../images/logo.svg'
 function NavBar() {
-  const { isLoggedIn, logOutUser } = useContext(AuthContext);
 
+  const  [isLoggedIn, logOutUser] = useContext(AuthContext);
+  const [showLink, setShowLink] = useState(false)
+
+ const handleShowLinks = () => {
+    setShowLink(!showLink);
+  }
+  console.log(showLink);
   return (
     <div>
-      <nav>
+      {/* <nav>
           <Link to="/" >
             <img className="logo" src={logo} alt="logo"/> 
           </Link>
@@ -52,7 +58,59 @@ function NavBar() {
           </>
         )}
       </div>
+
+      <button className="navbar-burger">
+          <span className="burger-bar"></span>
+      </button>
       
+      </nav> */}
+
+      <nav className={`${showLink ? "showNav" : "hide-nav"}`}>
+        <div>
+          <ul>
+            <Link to='/'>
+              <img className="logo" src={logo} alt="logo"/>
+            </Link>
+
+            <Link to="/services">
+              <li>Our chefs</li>
+            </Link>
+
+
+            {isLoggedIn && (
+            <> 
+                <Link to="/profile">
+                  <li>Profile</li>
+                </Link>
+                <Link to="/message">
+                  <li>Contact Us</li>
+                </Link>
+
+              <div className="btn-logout navbar">
+                <Link>
+                  <li onClick={logOutUser}>Log Out</li>
+                </Link>
+              </div>
+            </>
+            )}
+
+
+            {!isLoggedIn && (
+            <div className="navbarAuth navbar">
+            
+              <Link to="/signup">
+                <li>Sign Up</li>
+              </Link>
+              <Link to="/login">
+                <li>Log In</li>
+              </Link>
+            </div>
+            )}
+          </ul>
+        </div>
+        <button className="navbar-burger" onClick={handleShowLinks}>
+          <span className="burger-bar"></span>
+        </button>
       </nav>
 
 
