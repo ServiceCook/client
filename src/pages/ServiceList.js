@@ -60,7 +60,6 @@ function ServiceList() {
             <p>No services found.</p>
           ) : (
             services.map((service) => (
-              //console.log(service.availability)
               <div key={service._id} className="container-service-card-list">
                 <ServiceCard key={service._id} {...service} />
               </div>

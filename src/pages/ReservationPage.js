@@ -4,12 +4,10 @@ import { useNavigate, useParams, } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 
 function ReservationPage(props){
-    const getUserId = localStorage.getItem("userId")
 
     const {user} = useContext(AuthContext);
     const [reservation, setReservation] = useState([]);
     const [service, setService] = useState("");
-    // const [user, setUser] = useState("");
     const [fullName, setFullName] = useState("");
     const [totalPerson, setTotalPerson] = useState("");
     const [pricePerPerson, setPricePerPerson] = useState("");
@@ -17,7 +15,7 @@ function ReservationPage(props){
     const [date, setDate] = useState("");
     const [hour, setHour] = useState("");
 
-    const API_URL = process.env.REACT_APP_SERVER_URL
+    const API_URL = process.env.REACT_APP_SERVER_URL;
     
     const { serviceId } = useParams();
     const navigate = useNavigate()
@@ -48,33 +46,30 @@ function ReservationPage(props){
             hour
           };
 
-        if(getUserId !== user._id) {
+
             axios
             .post(`${API_URL}/api/services/${serviceId}/reserve`, newReservation, { headers : { Authorization: `Bearer ${storedToken}`}})
                 .then((response) => {                    
                     const reservationData = response.data;
                     setService(reservationData._id);
-                    // setUser("");
                     setTotalPerson("");
                     setTotalPrice("");
                     setDate("");
                     setHour("");
-
+                                        
                     navigate('/confirmation');
                 })
                 .catch(err => {
                     console.log("failed to reserve the service", err);
                 });
-        } else {alert(`Hi, ${user.name} you have order this service, please check your order status. 
-If you want to re-order, you must delete the previous order.`)}
     }
     
      useEffect(() => {
         getService();
-     })
+     }, [])
     
 
-    
+
     if(reservation === undefined) {
         return <h1 className="loading">Loading...</h1>
     } else {

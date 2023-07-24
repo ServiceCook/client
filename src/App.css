@@ -892,7 +892,10 @@ text-align: center;
   color: black;
 }
 
-
+.notification {
+  font-weight: bold;
+  color: red;
+}
 
 
 
