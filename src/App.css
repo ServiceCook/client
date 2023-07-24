@@ -1834,9 +1834,10 @@ text-align: center;
     right: 0;
     bottom: 0;
     height: 100vh;
-    padding: 0;
+    padding: 5em 0em;
     margin: 0;
     background-color: #074220;
+    z-index: 3;
   }
   
   
@@ -1870,6 +1871,7 @@ text-align: center;
     padding: 3em;
     margin-top: 13em;
     height: 1em;
+
   }
   nav .navbarAuth a{
     margin: 3em 1.5em ;
@@ -1887,14 +1889,17 @@ text-align: center;
   } 
   .navbar-burger{
     display: block;
-    position: fixed;
+    position: absolute;
     top: 1.8em;
     right: 2em;
     cursor: pointer;
     padding: 0;
     border: 0;
   }
-
+  .navbar-burger.open{
+    position: fixed;
+    z-index: 4;
+  }
 
   .burger-bar,
   .burger-bar::before,
