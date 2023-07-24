@@ -1807,7 +1807,7 @@ text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 63.5vh;
+    height: 60.5vh;
     background-color: #EBEBEB;
     margin: 0;
     padding: 2em;
@@ -2288,7 +2288,7 @@ text-align: center;
     flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
-    margin: 3.6em;
+    margin: 1.5em;
     height: auto;
   
   }
@@ -2298,7 +2298,7 @@ text-align: center;
     flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
-    margin: 4.05em;
+    margin: 7.65em;
     height: auto;
   }
   
@@ -2421,7 +2421,7 @@ text-align: center;
     align-items: center;
     background-color: #EBEBEB;
     height: auto;
-    padding: 8.35em 0em;
+    padding: 11.6em 0em;
   
   }
   
@@ -2437,7 +2437,7 @@ text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20.5vh 0vh;
+    padding: 23.7vh 0vh;
     height: auto;
     background-color: #EBEBEB;
   }
@@ -2530,14 +2530,14 @@ text-align: center;
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 2em 0em 4em;
+    padding: 2em 2em 4em;
   }
   
   .contact_form {
     display: flex;
     flex-direction: column;
     text-align: center;
-    width: 15em;
+    width: 18em;
     background-color: #EBEBEB;
     padding: 1em;
     margin-bottom: 1.5em;
