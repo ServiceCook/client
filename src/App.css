@@ -1813,20 +1813,18 @@ text-align: center;
     padding: 2em;
   }
    /*Navbar */
-   .navbar {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: center;
-  } 
+
    .logo{
-    width: 5em;
+    width: 4em;
     height: auto;
     margin-left: 0em;
   } 
   
-  
-  /* nav {
+  .hide-nav{
+    display: none;
+  }
+
+  .showNav ul{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1836,44 +1834,19 @@ text-align: center;
     right: 0;
     bottom: 0;
     height: 100vh;
-    padding: 2em;
-    background-color: #074220;
-  }
-
-  nav ul{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     padding: 0;
     margin: 0;
-  }
-  
-  nav #nav-mobile{
-    list-style-type: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    right: -100vw;
-    bottom: 0;
-    width: 0;
-    height: 100vh;
-    padding: 2em;
     background-color: #074220;
-    margin-bottom: 10em;
-    visibility: hidden;
-    transition: all 0.6s ease-out;
   }
   
-  nav .showNav #nav-mobile{
+  
+  .showNav {
     width: 100vw;
     right: 0;
-    visibility: visible;
+
   }
 
-  nav  a{
+  .showNav  a{
     flex-direction: column;
     display: block;
     color: white;
@@ -1882,11 +1855,11 @@ text-align: center;
 
   }
   
-  nav li:hover{
+  .showNav li:hover{
     color: #f8bddf;
   }
   
-  nav .navbarAuth{
+  .showNav .navbarAuth{
     color: white;
     position: fixed;
     float: none;
@@ -1915,19 +1888,20 @@ text-align: center;
   .navbar-burger{
     display: block;
     position: fixed;
-    top: 2em;
+    top: 1.8em;
     right: 2em;
-  }
-  .navbar-burger:hover{
     cursor: pointer;
+    padding: 0;
+    border: 0;
   }
+
 
   .burger-bar,
   .burger-bar::before,
   .burger-bar::after{
     display: block;
     width: 40px;
-    height: 3px;
+    height: 4px;
     position: relative;
     border-radius: 3px;
     background-color: white;
@@ -1938,6 +1912,7 @@ text-align: center;
   .burger-bar::after{
     content: "";
     position: absolute;
+    left: 0;
   }
 
   .burger-bar::before{
@@ -1948,19 +1923,19 @@ text-align: center;
     transform: translateY(12px);
   }
 
-  .showNav .burger-bar:before{
+  .navbar-burger.open .burger-bar:before{
     transform: rotate(45deg);
   }
 
-  .showNav .burger-bar::after{
+  .navbar-burger.open .burger-bar::after{
     transform: rotate(-45deg);
   }
 
-  .showNav .burger-bar{
-    width: 0;
+  .navbar-burger.open .burger-bar{
+    height: 0;
     background: transparent;
   }
- */
+ 
 
   /*HomePage css*/
   .coverHomepage{
