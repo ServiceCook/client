@@ -15,61 +15,9 @@ function NavBar() {
   const closeMenu = () => {
     setShowLink(false);
   }
-  console.log(showLink);
+
   return (
     <div>
-      {/* <nav>
-          <Link to="/" >
-            <img className="logo" src={logo} alt="logo"/> 
-          </Link>
-
-          <Link to="/services" >
-            <p>Our chefs</p>
-          </Link>
-       
-
-        {isLoggedIn && (
-          <>
-            <Link to="/profile">
-              <p>Profile</p>
-            </Link>
-            <Link to="/message">
-              <p>Contact Us</p>
-            </Link>
-          </>
-        )}
-      <div className="navbarAuth">
-        {!isLoggedIn && (
-          <>
-            <div className='signup-login'>
-              <Link to="/signup">
-                {" "}
-                <p>Sign Up</p>{" "}
-              </Link>
-              <Link to="/login">
-                {" "}
-                <p>LogIn</p>{" "}
-              </Link>
-            </div>
-          </>
-        )}
-
-        
-      {isLoggedIn && (
-          <>
-            <div className="btn-logout navbar">
-              <p onClick={logOutUser}>Log Out</p>
-            </div>
-          </>
-        )}
-      </div>
-
-      <button className="navbar-burger">
-          <span className="burger-bar"></span>
-      </button>
-      
-      </nav> */}
-
       <nav>
         <div className={`${showLink ? "showNav" : "hide-nav"}`}>
           <ul>
@@ -77,7 +25,7 @@ function NavBar() {
               <img className="logo" src={logo} alt="logo"/>
             </Link>
 
-            <Link to="/services" onClick={closeMenu}>
+            <Link to="/services" onClick={handleShowLinks}>
               <li>Our chefs</li>
             </Link>
 
