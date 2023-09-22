@@ -128,7 +128,6 @@ nav .btn-logout {
   top: 30%;
   left: 37%;
   opacity: 1;
-  display: none;
 }
 .coverHomepage h1 {
   color: white;
@@ -185,97 +184,6 @@ a:-webkit-any-link{
   text-decoration: none;
 }
 
-nav div ul a .logo {
-  animation: transitionOne 0.75s;
-  transition: 0.2s ease-out;
-}
-
-/* .logo-home.animate {
-  animation: transitionOne 0.75s;
-  transition: .1s ease-in-out;
-  display: initial;
-}
-
-.carousselHome img.animate {
-  animation: transitionTwo 0.75s;
-  transition: .1s ease-in-out;
-}
-
-div.carousselHome div h1.animate {
-  animation: transitionThree 0.75s;
-  transition: .2s ease-in-out;
-}
-
-div.carousselHome div p.animate {
-  animation: transitionFour 0.75s;
-  transition: .2s ease-in-out;
-}
-
-div.carousselHome div a h3.animate {
-  animation: transitionFive 0.75s;
-  transition: .2s ease-in-out;
-} */
-
-
-@keyframes transitionOne {
-  from {
-    opacity: 0;
-    transform: translateX(-500px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes transitionTwo {
-  from {
-    opacity: 0;
-    transform: translateX(500px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes transitionThree {
-  from {
-    opacity: 0;
-    transform: translateX(-500px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes transitionFour {
-  from {
-    opacity: 0;
-    transform: translateX(500px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes transitionFive {
-  from {
-    opacity: 0;
-    transform: translateY(500px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 /* Profile Page */
 
